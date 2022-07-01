@@ -29,6 +29,7 @@ button {
   cursor: pointer;
 }
 
+
 .nav_links {
   list-style: none;
 }
@@ -81,4 +82,40 @@ button:hover {
 }
 .hader-desc_BTN:hover {
   background-color: aqua;
+}
+
+/* REVISAR */
+/* Caja del formulario */
+.box-form{
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+/* Select dentro del form */
+.formulario select{
+  width: 421px;
+  margin: 5px 0px 20px 0px;
+}
+/* Inputs dentro del form */
+.formulario input{
+  margin: 5px;
+}
+/* TextArea del formulario */
+.formulario textarea{
+  margin: 0px 0px 10px 0px;
+}
+/* Titulo del formulario */
+.box-form h4{
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Imagen detras del area -Day academy- */
+.img-DayCode-texto{
+    background-image: url('../IMG/Ellipse\ 2-academy.png');
+    background-position: start;
+    background-repeat: no-repeat;
+    background-size: 65% 100%;
+    width: 40%;
+    height: 350px;
 }
