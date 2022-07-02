@@ -123,14 +123,14 @@ button:hover {
 }
 
 /* Imagen detras del area -Day academy- */
-.img-DayCode-texto {
+/* .img-DayCode-texto {
   background-image: url('../IMG/Ellipse\ 2-academy.png');
   background-position: start;
   background-repeat: no-repeat;
   background-size: 65% 100%;
   width: 40%;
   height: 350px;
-}
+} */
 
 /* card serv */
 .card-serv {
