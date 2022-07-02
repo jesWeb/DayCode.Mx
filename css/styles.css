@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 /* var */
 
 /* nav */
@@ -33,16 +34,20 @@ button {
 .nav_links {
   list-style: none;
 }
+
 .nav_links li {
   display: inline-block;
   padding: 0px 20px;
 }
+
 .nav_links li a {
   transition: all 0.5s ease 0s;
 }
+
 .nav_links li a:hover {
   clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
 }
+
 button {
   padding: 9px 25px;
   background-color: rgba(0, 136, 169, 1);
@@ -52,9 +57,11 @@ button {
 
   transition: all 0.3s ease 0s;
 }
+
 button:hover {
   background-color: green;
 }
+
 /* header */
 .header-img {
   width: 100%;
@@ -80,42 +87,71 @@ button:hover {
   text-decoration: none;
   border-radius: 10px;
 }
+
 .hader-desc_BTN:hover {
   background-color: aqua;
 }
 
 /* REVISAR */
 /* Caja del formulario */
-.box-form{
+.box-form {
   width: 50%;
   margin: 20px auto;
   text-align: center;
 }
+
 /* Select dentro del form */
-.formulario select{
+.formulario select {
   width: 421px;
   margin: 5px 0px 20px 0px;
 }
+
 /* Inputs dentro del form */
-.formulario input{
+.formulario input {
   margin: 5px;
 }
+
 /* TextArea del formulario */
-.formulario textarea{
+.formulario textarea {
   margin: 0px 0px 10px 0px;
 }
+
 /* Titulo del formulario */
-.box-form h4{
+.box-form h4 {
   text-align: center;
   font-weight: bold;
 }
 
 /* Imagen detras del area -Day academy- */
-.img-DayCode-texto{
-    background-image: url('../IMG/Ellipse\ 2-academy.png');
-    background-position: start;
-    background-repeat: no-repeat;
-    background-size: 65% 100%;
-    width: 40%;
-    height: 350px;
+.img-DayCode-texto {
+  background-image: url('../IMG/Ellipse\ 2-academy.png');
+  background-position: start;
+  background-repeat: no-repeat;
+  background-size: 65% 100%;
+  width: 40%;
+  height: 350px;
+}
+
+/* card serv */
+.card-serv {
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-coders {
+  text-align: center;
+  margin: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+}
+
+.card-coders h4 {
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
+.card-coders p {
+  font-size: 0.9em;
 }
