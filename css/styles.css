@@ -155,3 +155,28 @@ button:hover {
 .card-coders p {
   font-size: 0.9em;
 }
+
+/* team */
+.team {
+  display: flex;
+  justify-content: center;
+
+  margin: 2em;
+}
+
+.team-card {
+  margin: 3em;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.team-card img {
+  width: 70%;
+  padding: 2em;
+
+}
+
+.coders-media {
+  background: #000;
+}
