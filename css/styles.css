@@ -177,10 +177,18 @@ button:hover {
   margin-top: 5px;
 }
 
+/* day academy */
 
+.Academy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
+.Academy-img{
+ 
+  height:30vh;
+}
 
 
 
