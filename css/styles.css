@@ -141,7 +141,41 @@ button:hover {
   font-size: 0.9em;
 }
 
+/* team */
+.team {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin: 2em;
+}
 
+.team-card {
+  margin: 1em;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.team-card_img {
+  width: 70%;
+  padding: 2em;
+}
+
+.coders-media {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 5em;
+}
+
+.coders-media_link{
+  text-decoration: none;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1em;
+  margin-top: 5px;
+}
 
 
 
@@ -202,41 +236,7 @@ button:hover {
 } */
 
 
-/* team */
-.team {
-  display: flex;
-  justify-content: center;
-  margin: 2em;
-}
 
-.team-card {
-  margin: 3em;
-  text-align: center;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-
-}
-
-.team-card_img {
-  width: 70%;
-  padding: 2em;
-
-}
-
-.coders-media {  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  height: 5em;
-}
-
-.coders-media_link{
-  text-decoration: none;
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: 1em;
-  margin-top: 5px;
-}
 
 /* footer */
 footer{
