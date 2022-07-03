@@ -1,4 +1,7 @@
-* {
+* ,
+*::after,
+*::before
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -92,6 +95,72 @@ button:hover {
   background-color: aqua;
 }
 
+/* daycode */
+
+.daycode{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.daycode-img{
+  padding: 2em;
+}
+/* card serv */
+.cards-serv {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  
+  
+}
+
+.card-services {
+  text-align: center;
+  margin: 1.4em;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5%;
+  
+}
+
+.card-serv_img{
+  margin: 1em;
+}
+
+.card-serv_desc{
+  text-align: center;
+  padding: 2px 16px;
+  background: #000;
+}
+.card-coders h4 {
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
+.card-coders p {
+  font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* REVISAR */
 /* Caja del formulario */
 .box-form {
@@ -132,35 +201,6 @@ button:hover {
   height: 350px;
 } */
 
-/* card serv */
-.cards-serv {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.card-services {
-  text-align: center;
-  margin: 1.4em;
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5%;
-  height: 25vh;
-}
-
-
-.card-services-desc{
-  text-align: center;
-  padding: 2px 16px;
-  background: #000;
-}
-.card-coders h4 {
-  font-size: 1rem;
-  margin-top: 1em;
-}
-
-.card-coders p {
-  font-size: 0.9em;
-}
 
 /* team */
 .team {
