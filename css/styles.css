@@ -133,20 +133,26 @@ button:hover {
 } */
 
 /* card serv */
-.card-serv {
-
+.cards-serv {
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.card-coders {
+.card-services {
   text-align: center;
-  margin: 10px;
+  margin: 1.4em;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5%;
+  height: 25vh;
 }
 
+
+.card-services-desc{
+  text-align: center;
+  padding: 2px 16px;
+  background: #000;
+}
 .card-coders h4 {
   font-size: 1rem;
   margin-top: 1em;
