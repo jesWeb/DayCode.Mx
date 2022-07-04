@@ -113,8 +113,6 @@ button:hover {
   display: flex;
   justify-content: space-evenly;
   align-content: center;
-  
-  
 }
 
 .card-services {
@@ -122,7 +120,6 @@ button:hover {
   margin: 1.4em;
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5%;
-  
 }
 
 .card-serv_img{
@@ -155,7 +152,6 @@ button:hover {
   margin: 1em;
   text-align: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-
 }
 
 .team-card_img {
@@ -180,7 +176,6 @@ button:hover {
 }
 
 /* day academy */
-
 .Academy{
   display: flex;
   justify-content: center;
@@ -192,53 +187,72 @@ button:hover {
   height:30vh;
 }
 
-
-/* ------------------------------------------------ */
-/* REVISAR */
-/* Caja del formulario */
-.box-form {
-  width: 50%;
-  margin: 20px auto;
-  text-align: center;
-}
-
-/* Select dentro del form */
-.formulario select {
-  width: 421px;
-  margin: 5px 0px 20px 0px;
-}
-
-/* Inputs dentro del form */
-.formulario input {
-  margin: 5px;
-}
-
-/* TextArea del formulario */
-.formulario textarea {
-  margin: 0px 0px 10px 0px;
-}
-
-/* Titulo del formulario */
-.box-form h4 {
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Imagen detras del area -Day academy- */
-/* .img-DayCode-texto {
-  background-image: url('../IMG/Ellipse\ 2-academy.png');
-  background-position: start;
-  background-repeat: no-repeat;
-  background-size: 65% 100%;
-  width: 40%;
-  height: 350px;
-} */
-
 /* footer */
 footer{
   height: 30vh;
 }
 
+/* Servicios */
+
+.box-container{
+  background-color: rgba(232, 232, 232, 1);
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.desc-initial{
+  font-size: 20px;
+  text-align: justify;
+  font-weight: 600;
+  padding: 40px;
+}
+
+.desc-initial h1{
+  font-weight: bold;
+}
+
+.flex-box{
+
+  display: flex;
+  margin: auto;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  overflow: hidden;
+  
+}
+
+.box-serv-logo{
+  width: 20%;
+  min-width: 10%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  text-align: center;
+  overflow: hidden;
+
+  padding: 20px;
+
+}
+
+.box-serv-logo .icon{
+  justify-content: center;
+}
+
+.box-serv-desc{
+  display: grid;  
+  width: 80%;
+  min-width: 50%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  overflow: hidden;
+}
+
+/* ====================================== */
+/* Formulario */
 /* Contenedor */
 .form{
   font-family: 'Roboto', sans-serif;
