@@ -183,8 +183,10 @@ button:hover {
 }
 
 .Academy-img{
- 
   height:30vh;
+}
+.Academy-desc{
+  text-align: start;
 }
 
 /* footer */
@@ -271,8 +273,8 @@ footer{
   margin: auto;
   width: 50%;
   flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-content: center;
+  justify-content: space-around;
+  align-content: end;
   overflow: hidden;
 }
 
