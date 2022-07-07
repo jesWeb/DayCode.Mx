@@ -1,0 +1,25 @@
+* ,
+*::after,
+*::before
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.form-main{
+  height: 80vh;
+}
+
+.img-logeo{
+    background-image: linear-gradient(201.8deg, rgba(0, 102, 255, 0.7) 4.83%, rgba(255, 255, 255, 0.7) 107.75%);
+    color: white;
+}
+
+.img{
+    background-image: url(../IMG/icons/Iniciar-sesion.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 80%;
+     }
