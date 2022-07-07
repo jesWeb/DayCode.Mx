@@ -1,18 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sig-in.css">
 </head>
-<body>
-    
-    <section class="container">
 
+<body>
+
+    <section class="container   mt-5 shadow">
+        <div class="row  align-items-stretch form-main ">
+            <!-- img -->
+            <div class="col img-logeo ">
+                <!-- title -->
+                <h2 class="h3 p-3">Eres tan joven como 
+                    la última <br>
+                    vez que cambiaste tu mente <br>
+                    Timothy Leary.</h2>
+                <div class="img  mt-4"></div>
+            </div>
+            <!-- FORM -->
+            <div class="col ">
+                <!-- img  -->
+                <div class="text-center border-bottom border-primary border-2">
+                    <img src="./IMG/DAYCODE-nav.png" class="img-fluid mb-2 " alt="">
+                </div>
+                <!-- title -->
+                <h2 class="fw-bl text-center pt-4 mb-4">Crear una cuenta</h2>
+                <!-- form -->
+                <form action="">
+
+                    <div class="mb-4">
+                        <label for="email" class="form-label"> Correo Electronico</label>
+                        <input type="email" name="correo-electronico" class="form-control"
+                            placeholder="Escribe tu correo" required id="">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="contraseña" class="form-control"
+                            placeholder="Escribe tu contraseña" required id="">
+                    </div>
+
+                    <div class="d-grid">
+                        <a href="" type="submit" class="btn btn-primary">Iniciar Sesión</a>
+                    </div>
+
+
+                    <div class="my-5">
+                        <!-- password -->
+                        <p class="text-center "><a href="">¿Olvidaste tu Contraseña? </a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
 </body>
 <script src="./js/bootstrap.bundle.min.js"></script>
+
 </html>
