@@ -134,7 +134,90 @@
       </section>
       <!-- FORM -->
       <section class="mt-5 bg-success">
+        <form>
+          <!-- Tenemos 2 columnas grid layout Nombre y primer apellido -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="nombre" class="form-control" />
+                <label class="form-label" for="nombre">Nombre:</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="ape-1" class="form-control" />
+                <label class="form-label" for="ape-1">Primer apellido:</label>
+              </div>
+            </div>
+          </div>
+        
+           <!-- Tenemos 2 columnas grid layout Segundpo apellido y telefono-->
+           <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="ape-2" class="form-control" />
+                  <label class="form-label" for="ape-2">Segundo apellido:</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="tel" id="telef" class="form-control" />
+                  <label class="form-label" for="telef">Telefono:</label>
+                </div>
+              </div>
+            </div>
 
+            <!-- Tenemos 2 columnas grid layout Correo electronico y nombre de la empresa-->
+           <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="email" id="e-mail" class="form-control" />
+                  <label class="form-label" for="e-mail">Correo electronico: </label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="empresa" class="form-control" />
+                  <label class="form-label" for="empresa">Nombre de la empresa:</label>
+                </div>
+              </div>
+            </div>
+        
+          <!-- <div class="col-12">
+              <label class="visually-hidden" for="inlineFormSelectPref">Servicios</label>
+              <select class="select">
+                <option value="1">Desarrollo Web</option>
+                <option value="2">Desarrrollo de Software</option>
+                <option value="3">Capacitacion empresarial</option>
+                <option value="4">SEO</option>
+                <option value="5">Gestion de Base de Datos</option>
+                <option value="6">Cursos</option>
+              </select>
+            </div> -->
+
+          <!-- Lista desplegable -->
+          <div class="col-md-9 col-sm-9 col-xs-12">
+            <select class="form-control selectpicker" name="lista-des" id="lista-des" data-live-search="true">
+                <option value="1">Desarrollo Web</option>
+                <option value="2">Desarrrollo de Software</option>
+                <option value="3">Capacitacion empresarial</option>
+                <option value="4">SEO</option>
+                <option value="5">Gestion de Base de Datos</option>
+                <option value="6">Cursos</option>
+            </select>
+          </div>
+          <br>
+
+          <!-- Descripcion del mensaje -->
+          <div class="form-outline mb-4">
+              <textarea class="form-control" id="descrip" rows="4"></textarea>
+              <label class="form-label" for="descrip">Descripcion:</label>
+          </div>
+
+          <!-- Boton enviar -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">Enviar</button>
+        
+        </form>
       </section>
     </div>
   </body>
