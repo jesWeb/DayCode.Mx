@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear cuenta</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/form-Account.css">
 </head>
@@ -26,14 +26,14 @@
                     <img src="./IMG/DAYCODE-nav.png" class="img-fluid mb-2 " alt="">
                 </div>
                 <!--  -->
-                <h2 class="fw-bl text-center pt-4 mb-4">Bienvenido</h2>
+                <h2 class="fw-bl text-center pt-4 mb-4">Crear una cuenta</h2>
 
                 <!-- form -->
                 <form action="">
-
+                    
                     <div class="mb-4">
-                        <label for="text" class="form-label">Nombre</label>
-                        <input type="text" name="Nombre" id="" class="form-control" placeholder="Nombre">
+                        <label for="text" class="form-label" >Nombre</label>
+                        <input type="text" name="Nombre" id="" class="form-control" placeholder="Nombre" required >
                     </div>
                     <div class="mb-4">
                         <label for="text" class="form-label">Apellido Paterno</label>
@@ -46,21 +46,21 @@
 
                     <div class="mb-4">
                         <label for="date">Fecha de Naciemiento</label>
-                        <input type="date" name="fecha-nacimiento" id="" class="form-control">
+                        <input type="date" name="fecha-nacimiento" id="" class="form-control" required>
                     </div>
 
                     <div class="mb-4">
                        <label for="email" class="form-label"> Correo Electronico</label>
-                       <input type="email" name="correo-electronico" class="form-control" placeholder="Escribe tu correo" id="">
+                       <input type="email" name="correo-electronico" class="form-control" placeholder="Escribe tu correo" required id="">
                     </div>
 
                     <div class="mb-4">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="contraseña" class="form-control" placeholder="Escribe tu contraseña" id="">
+                        <input type="password" name="contraseña" class="form-control" placeholder="Escribe tu contraseña" required id="">
                     </div>
 
                     <div class="mb-5">
-                        <input type="checkbox" name="conected" class="form-check-input " id="">
+                        <input type="checkbox" name="conected" class="form-check-input " id="" required>
                         <label for="conected" class="form-check-label">Matenerme conectado</label>
                     </div>
 
@@ -70,29 +70,11 @@
 
                     <div class="my-5">
                         <!--usuario -->
-                        <span class="">¿Ya tienes una cueta? <a href=""> ir </a></span> <br>
-                        <span class=""><a href="">Recuperar conraseña </a></span>
+                        <p class="text-center ">¿Ya tienes una cueta? <a href=""> ir </a></p> 
+                        <p class="text-center "><a href="">Recuperar conraseña </a></p>
                     </div>
-
-
                 </form>
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </section>
     <!-- Bp-js -->
