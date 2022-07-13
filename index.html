@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <main>
+
   <body>
     <div class="container">
       <!-- daycode descrip  -->
@@ -351,7 +352,69 @@
           <a href="" class="btn btn-primary">Compartir Experiencia</a>
         </div>
       </section>
-      
+      <!--formulario  -->
+      <section class="mt-5  ">
+        <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
+        <!-- form -->
+        <form action="" class="row g-3 mt-3 justify-content-center" id="">
+          <!--name  -->
+          <div class="col-6">
+            <label for="" class="form-label">Nombre</label>
+            <input type="text" class="form-control" placeholder="nombre" name="" id="">
+          </div>
+          <!--first-name -->
+          <div class="col-6">
+            <label for="" class="form-label">Apellido Paterno</label>
+            <input type="text" class="form-control" name="" id="">
+          </div>
+          <!--second-name  -->
+          <div class="col-6">
+            <label for="" class="form-label">Apellido Materno</label>
+            <input type="text" class="form-control" name="" id="">
+          </div>
+          <!--contact-->
+          <div class="col-6">
+            <label for="" class="form-label">telefono</label>
+            <input type="tel" name="" class="form-control" id="">
+          </div>
+          <!-- Name enterprice -->
+          <div class="col-6 col-md-6">
+            <label for="" class="form-label">Nombre de tu empresa</label>
+            <input type="text" class="form-control" name="" id="">
+          </div>
+          <!-- email -->
+          <div class="col-6 col-md-6">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" name="" id="">
+          </div>
+          <!-- services opcion -->
+          <div class="col-12 mt-4 form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Servicios">
+              <option selected>Html</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="floatingSelect">selecciona el servicio de interes</label>
+
+          </div>
+
+          <!-- descripcion -->
+          <div class="form-floating col-12 ">
+            <textarea class="form-control" placeholder="Mi @empresa es...." id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Tu esmpresa es...</label>
+          </div>
+          <!--  -->
+          <div class="mb-3 text-center ">
+
+            <a href="" type="submit" class="btn btn-primary rounded-2 col-4">Enviar</a>
+          </div>
+
+
+        </form>
+      </section>
+
+
 
     </div>
   </body>
@@ -373,4 +436,5 @@
 <?php 
   include("registro.php");
 ?>
+
 </html>
