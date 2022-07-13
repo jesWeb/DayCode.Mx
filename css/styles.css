@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-* ,
+*,
 *::after,
-*::before
-{
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* var */
+/* :root{
+ 
+} */
 
 /* nav */
 header {
@@ -99,15 +101,17 @@ button:hover {
 
 /* daycode */
 
-.daycode{
+.daycode {
   display: flex;
   justify-content: space-evenly;
   align-content: center;
   flex-wrap: wrap;
 }
-.daycode-img{
+
+.daycode-img {
   padding: 2em;
 }
+
 /* card serv */
 .cards-serv {
   display: flex;
@@ -122,15 +126,16 @@ button:hover {
   border-radius: 5%;
 }
 
-.card-serv_img{
+.card-serv_img {
   margin: 1em;
 }
 
-.card-serv_desc{
+.card-serv_desc {
   text-align: center;
   padding: 2px 16px;
   background: #000;
 }
+
 .card-coders h4 {
   font-size: 1rem;
   margin-top: 1em;
@@ -159,7 +164,7 @@ button:hover {
   padding: 2em;
 }
 
-.coders-media {  
+.coders-media {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,7 +172,7 @@ button:hover {
   height: 5em;
 }
 
-.coders-media_link{
+.coders-media_link {
   text-decoration: none;
   width: 1.5em;
   height: 1.5em;
@@ -176,29 +181,69 @@ button:hover {
 }
 
 /* day academy */
-.Academy{
+.Academy {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Academy-img{
-  height:30vh;
+.Academy-img {
+  height: 30vh;
 }
-.Academy-desc{
+
+.Academy-desc {
   text-align: start;
 }
 
-.fondo{
+.fondo {
   background-image: url(../IMG/footer-wave.svg);
   background-repeat: no-repeat;
-  height: 30vh;
-  
+  height: 20vh;
+
 }
 
 
+/* slider-comments */
+.title-coments{
+  text-align: center;
+}
 
+.testimonial-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 500px; */
+  /* background: linear-gradient(-150deg, white 50%, rgba(0, 136, 169, 1) 40%); */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.img-text-sl {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 10px;
  
+}
+
+.img-text-sl h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.img-text-sl p {
+  font-size: 14px;
+}
+
+.single-box{ 
+  background: tomato;
+  border-radius: 5%;
+  position: relative;
+  margin: auto;
+}
+
+
 
 
 
@@ -228,25 +273,25 @@ button:hover {
 
 /* Servicios */
 
-.box-container{
+.box-container {
   background-color: rgba(232, 232, 232, 1);
   width: 90%;
   margin: auto;
   border-radius: 20px;
 }
 
-.desc-initial{
+.desc-initial {
   font-size: 20px;
   text-align: justify;
   font-weight: 600;
   padding: 40px;
 }
 
-.desc-initial h1{
+.desc-initial h1 {
   font-weight: bold;
 }
 
-.flex-box{
+.flex-box {
 
   display: flex;
   margin: auto;
@@ -255,10 +300,10 @@ button:hover {
   justify-content: space-evenly;
   align-content: center;
   overflow: hidden;
-  
+
 }
 
-.box-serv-logo{
+.box-serv-logo {
   width: 20%;
   min-width: 10%;
   display: grid;
@@ -270,12 +315,12 @@ button:hover {
 
 }
 
-.box-serv-logo .icon{
+.box-serv-logo .icon {
   justify-content: center;
 }
 
-.box-serv-desc{
-  display: grid;  
+.box-serv-desc {
+  display: grid;
   width: 80%;
   min-width: 50%;
   padding: 20px;
@@ -288,7 +333,7 @@ button:hover {
 /* ====================================== */
 /* Formulario */
 /* Contenedor */
-.form{
+.form {
   font-family: 'Roboto', sans-serif;
   background-color: white;
   margin: auto;
@@ -300,7 +345,7 @@ button:hover {
 }
 
 /* Contenedor de boxes-flex */
-.form-container{
+.form-container {
   display: flex;
   margin: auto;
   width: 50%;
@@ -311,7 +356,7 @@ button:hover {
 }
 
 /* Boxes */
-.form-group{
+.form-group {
   overflow: hidden;
   width: 38%;
   min-width: 200px;
@@ -319,7 +364,7 @@ button:hover {
 }
 
 /* Inputs */
-.form-input{
+.form-input {
   background: none;
   color: #706c6c;
   font-size: 1rem;
@@ -331,7 +376,7 @@ button:hover {
 }
 
 /* Select */
-.b-select{
+.b-select {
   flex-basis: 80%;
 }
 
@@ -345,13 +390,13 @@ textarea {
 }
 
 /* Box TextArea */
-.b-t-area{
+.b-t-area {
   margin: 20px auto;
   width: 80%;
 }
 
 /* Title */
-.form-title{
+.form-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: .5em;
@@ -359,7 +404,7 @@ textarea {
 }
 
 /* BTN sumbit */
-.form-submit{
+.form-submit {
   background-color: #3866f2;
   width: 300px;
   color: white;
@@ -375,10 +420,10 @@ textarea {
 
 /* --- */
 /* Box select > select*/
-.content-select select{
-appearance: none;
--webkit-appearance: none;
--moz-appearance: none;
+.content-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 /* Herramienta select */
@@ -387,52 +432,53 @@ appearance: none;
 }
 
 /* Box select */
-.content-select{
+.content-select {
   margin: 20px auto;
-max-width: 100%;
-position: relative;
+  max-width: 100%;
+  position: relative;
 }
 
 /* Box select > select --Dispoiciones-- */
-.content-select select{
-display: inline-block;
-width: 100%;
-cursor: pointer;
+.content-select select {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
   padding: 7px 10px;
   height: 42px;
-  outline: 0; 
+  outline: 0;
   border: 0;
-border-radius: 0;
-background: rgba(240, 240, 245, 1);
-color: black;
-font-size: 1em;
+  border-radius: 0;
+  background: rgba(240, 240, 245, 1);
+  color: black;
+  font-size: 1em;
 
   font-family: 'Roboto', sans-serif;
-border:2px solid rgba(0,0,0,0.2);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   position: relative;
   transition: all 0.25s ease;
 }
 
 /* Box select > select --Efecto HOVER-- */
-.content-select select:hover{
-background: rgba(255, 255, 255, 1);
+.content-select select:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Elemento desplegable */
-.content-select i{
-position: absolute;
-right: 20px;
-top: calc(50% - 13px);
-width: 16px;
-height: 16px;
-display: block;
-border-left:4px solid rgba(76, 76, 82, 1);
-border-bottom:4px solid rgba(76, 76, 82, 1);
-transform: rotate(-45deg); /* Giramos el cuadrado */
-transition: all 0.10s ease;
+.content-select i {
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 13px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left: 4px solid rgba(76, 76, 82, 1);
+  border-bottom: 4px solid rgba(76, 76, 82, 1);
+  transform: rotate(-45deg);
+  /* Giramos el cuadrado */
+  transition: all 0.10s ease;
 }
 
 /*  Box select > select: i --Efecto HOVER--  */
-.content-select:hover i{
-margin-top: 3px;
+.content-select:hover i {
+  margin-top: 3px;
 }
