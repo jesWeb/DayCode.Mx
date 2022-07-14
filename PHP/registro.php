@@ -13,7 +13,7 @@ if (isset($_POST['subir'])) {
 		$empresa = trim($_POST['Empresa']);
 		$servicio = trim($_POST['Lista']);
 		//$descri = trim($_POST['Area']);
-
+		//$descri = trim($_POST['Area']);
 
 
 	    $consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, Nom_empresa, Servicio, /*Mensaje*/) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio',/*'$descri'*/)";
