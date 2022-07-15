@@ -9,6 +9,7 @@
   <!-- css -->
   <link rel="stylesheet" href="./css/bootstrap.min.css" />
   <link rel="stylesheet" href="./css/styles.css" />
+
 </head>
 
 <!-- navbar -->
@@ -445,6 +446,42 @@
           </div>
         </form>
       </section>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title h5-styles" id="staticBackdropLabel">¡Rebajas en agradecimiento a tu preferencia!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col">
+                                <div class="modal-body">
+                                    <p class="txt-anuncio">
+                                        Descuentos especiales para ti furuto programador. Consigue un 15 % de descuento sobre el precio de nuestros cursos. <br> Si, asi como lo escuchaste... ¡En todos nuestros cursos! 
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Modal body with image -->
+                                <div class="modal-body">
+                                    <img src="./IMG/img_modal.png" class="shadow-img img-styles"/>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quizá luego...</button>
+                    <button type="button" class="btn btn-primary"><a href="https://youtu.be/d6x2gyBFWVg" class="enlace-desc">Obtener descuento</a></button>
+                    </div>   
+                </div>
+            </div>|
+      </div>
+      
     </div>
   </body>
 </main>
@@ -462,7 +499,7 @@
 </footer>
 <!-- Bp-js -->
 <script src="./js/bootstrap.bundle.min.js"></script>
-
+<script src="./js/Open-modal.js"></script>
 <?php 
   include("../Test/PHP/registro.php");
 ?>

@@ -458,3 +458,39 @@ textarea {
 .content-select:hover i {
   margin-top: 3px;
 }
+
+
+
+/*/////////////////////////////*/
+.txt-anuncio{
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.shadow-img{
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 11px 0px rgba(0,0,0,1);
+}
+
+.h5-styles{
+  font-size: 25px;
+}
+
+.enlace-desc{
+  text-decoration: none;
+  color: white;
+}
+
+.enlace-desc:hover{
+  color: white;
+  font-weight: bolder;
+}
+
+.img-styles{
+  max-width: 330px;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+}
