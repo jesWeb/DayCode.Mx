@@ -39,7 +39,16 @@
   background: blue;
   color: #fff;
 }
+/* prom-img */
+.prom{
+  margin-top: 8rem;
+  /* width: 1300px; */
+}
 
+.prom-img{
+ width: 100%;
+ 
+}
 
 
 
