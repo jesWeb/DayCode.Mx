@@ -3,7 +3,7 @@
 include("con_db.php");
 
 if (isset($_POST['subir'])) {
-    if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Empresa']) >= 1) {
+    if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Empresa']) >= 1 ) {
 
 	    $nombre = trim($_POST['Nombre']);
 	    $ape_a = trim($_POST['Apellido_a']);
@@ -16,7 +16,7 @@ if (isset($_POST['subir'])) {
 
 
 
-	    $consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, nom_empresa, servicio, descrip_empresa) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio','$descri')";
+	    $consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, Nom_empresa, Servicio, Mensaje) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio','$descri')";
 
 
 	    $resultado = mysqli_query($conex,$consulta);
