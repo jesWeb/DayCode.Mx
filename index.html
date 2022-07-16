@@ -44,6 +44,7 @@
 </header>
 <!--  -->
 <main>
+
   <body>
     <!-- img-prom -->
     <div class="prom container mb-5">
@@ -70,42 +71,86 @@
         </div>
       </div>
       <!-- services -->
-      <section class="mb-4">
-        <div class=" bg-warning">
+      <section class="mb-4 mt-3">
+        <div class="">
           <!-- row -->
-          <div class="row">
+          <div class="row p-3">
             <!-- col-description -->
             <div class="col-7">
-              <!-- title -->
-              <h3 class="mb-3">
-                El crecimiento de tu negocio
-                <br />
-                nuestro principal objetivo.
-              </h3>
-              <!-- desc-serv -->
-              <p>
-                <span class="h5">DAYCODE</span> México proporciona servicios de Desarrollo Web, Publicidad
-                y Desarrollo de Software a propietarios de pequeñas y medianas
-                empresas, asi como a proveedores que desean hacer crecer su
-                negocio. Con nuestros servicios de su negocio tendrá un lugar
-                asegurado en la página principal de resultados de los más
-                importantes buscadores de internet
-              </p>
+              <div class="serv-desc">
+                <!-- title -->
+                <h3 class="mb-3">
+                  El crecimiento de tu negocio
+                  <br />
+                  nuestro principal objetivo.
+                </h3>
+                <!-- desc-serv -->
+                <p>
+                  <span class="h5">DAYCODE</span> México proporciona servicios de Desarrollo Web, Publicidad
+                  y Desarrollo de Software a propietarios de pequeñas y medianas
+                  empresas, asi como a proveedores que desean hacer crecer su
+                  negocio. Con nuestros servicios de su negocio tendrá un lugar
+                  asegurado en la página principal de resultados de los más
+                  importantes buscadores de internet
+                </p>
+              </div>
             </div>
           </div>
           <!-- cards-serv -->
-          <div class="row">
-            <!--card  -->
-            <div class="col-">
-              <!--  -->
+          <div class="mt-3">
+            <div class="row ">
+              <!--card-seo  -->
+              <div class="col-md-4">
+                <div class="card-serv">
+                  <!-- content -->
+                  <div class="card-serv_img">
+                    <img src="./IMG/icons/SEO-icon.svg " alt="" class="img-fluid card_img">
+                  </div>
+                  <!-- descripcion -->
+                  <div class="card-serv_desc">
+                    <h4 class="card-serv_title">Seo</h4>
+                    <p class="card-serv_txt">Conlleva el conjunto de acciones estratégicas para mejorar la visibilidad
+                      de los sitios web en resultados de Google y otros motores de búsqueda.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card-web -->
+              <div class="col-md-4">
+                <div class="card-serv">
+                  <!-- content -->
+                  <div class="card-serv_img">
+                    <img src="./IMG/icons/web-icon.svg" alt="" class="img-fluid card_img">
+                  </div>
+                  <!-- descripcion -->
+                  <div class="card-serv_desc">
+                    <h4 class="card-serv_title">Desarrollo web</h4>
+                    <p class="card-serv_txt">Desarrollo, diseño, maquetación, programación web/online/digital, de sitios
+                      web, de landing page, etcetera.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card--BD -->
+              <div class="col-md-4">
+                <div class="card-serv">
+                  <!-- content -->
+                  <div class="card-serv_img">
+                    <img src="./IMG/icons/Data-icon.svg" alt="" class="img-fluid card_img">
+                  </div>
+                  <!-- descripcion -->
+                  <div class="card-serv_desc">
+                    <h4 class="card-serv_title">DataBase</h4>
+                    <p class="card-serv_txt">Almacena datos y los conecta en una unidad lógica junto a los metadatos
+                      necesarios para su procesamiento.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- card -->
-            <div class="col-">
-              <!--  -->
-            </div>
-            <!-- card -->
-            <div class="col-">
-              <!--  -->
+          </div>
+          <!-- btn -->
+          <div class="mt-3 row ">
+            <div class="col text-end">
+              <a href="" class="btn btn-primary">Ver más</a>
             </div>
           </div>
         </div>
@@ -119,7 +164,7 @@
             <a href="">
               <div class="card">
                 <!-- img  card-->
-                <img src="https://picsum.photos/150/100" class="card-img-top" alt="">
+                <img src="https://picsum.photos/100/80" class="card-img-top" alt="">
                 <!-- description -->
                 <div class="card-body">
                   <!-- title -->
@@ -393,7 +438,6 @@
           <a href="" class="btn btn-primary">Compartir Experiencia</a>
         </div>
       </section>
-
       <!--formulario  -->
       <section class="mt-5">
         <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
@@ -402,7 +446,7 @@
           <!--name  -->
           <div class="col-6">
             <label for="" class="form-label">Nombre</label>
-            <input type="text" class="form-control"  name="Nombre" id="">
+            <input type="text" class="form-control" name="Nombre" id="">
           </div>
           <!--first-name -->
           <div class="col-6">
@@ -444,60 +488,65 @@
           </div>
           <!-- descripcion -->
           <div class="form-floating col-12 ">
-            <textarea class="form-control" name="Area" placeholder="Mi @empresa es...." id="floatingTextarea"></textarea>
+            <textarea class="form-control" name="Area" placeholder="Mi @empresa es...."
+              id="floatingTextarea"></textarea>
             <label for="floatingTextarea">Tu esmpresa es:</label>
           </div>
           <!-- btn-form -->
           <div class="mb-3 text-center ">
             <input type="submit" name="subir" class="btn btn-primary rounded-2 col-4">
-            <!-- <a href="" type="submit" class="btn btn-primary rounded-2 col-4">Enviar</a> -->
           </div>
         </form>
       </section>
 
       <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title h5-styles" id="staticBackdropLabel">¡Rebajas en agradecimiento a tu preferencia!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title h5-styles" id="staticBackdropLabel">¡Rebajas en agradecimiento a tu preferencia!
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col">
                     <div class="modal-body">
-                        <div class="container-fluid">
-                          <div class="row">
-                            <div class="col">
-                                <div class="modal-body">
-                                    <p class="txt-anuncio">
-                                        Descuentos especiales para ti furuto programador. Consigue un 15 % de descuento sobre el precio de nuestros cursos. <br> Si, asi como lo escuchaste... ¡En todos nuestros cursos! 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <!-- Modal body with image -->
-                                <div class="modal-body">
-                                    <img src="./IMG/img_modal.png" class="shadow-img img-styles"/>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quizá luego...</button>
-                    <button type="button" class="btn btn-primary"><a href="https://youtu.be/d6x2gyBFWVg" class="enlace-desc">Obtener descuento</a></button>
-                    </div>   
+                      <p class="txt-anuncio">
+                        Descuentos especiales para ti furuto programador. Consigue un 15 % de descuento sobre el precio
+                        de nuestros cursos. <br> Si, asi como lo escuchaste... ¡En todos nuestros cursos!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- Modal body with image -->
+                    <div class="modal-body">
+                      <img src="./IMG/img_modal.png" class="shadow-img img-styles" />
+                    </div>
+                  </div>
                 </div>
-            </div>|
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quizá luego...</button>
+              <button type="button" class="btn btn-primary"><a href="https://youtu.be/d6x2gyBFWVg"
+                  class="enlace-desc">Obtener descuento</a></button>
+            </div>
+          </div>
+        </div>|
       </div>
-      
+
     </div>
   </body>
 </main>
+<!-- footer -->
 <footer class="fondo container-fluid mt-5">
   <div class="d-flex justify-content-center align-items-center">
     <nav class="nav-footer">
-      <a href="">home</a>
-      <a href="">cursos</a>
+      <a href="">Home</a>
+      <a href="">Cursos</a>
       <a href=""><img src="./IMG/DAYCODE-nav.png" alt=""></a>
       <a href=""></a>
       <a href=""></a>
