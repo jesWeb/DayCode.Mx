@@ -11,6 +11,7 @@
 /* var */
 :root{
  --color-primary:#0066FF;
+ 
 }
 
 /* navbar */
@@ -232,6 +233,58 @@
   position: relative;
   margin: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* section day coders */
+
+.coder{
+  background:tomato;
+  border-radius: 10px;
+}
+
+
+.coders-img{
+  text-align: center;
+  padding: 20px;
+}
+
+.coders-img_picture{
+  width: 60%; 
+}
+
+.coder-social{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #000;
+  height: 80px;
+}
+
+
+
+
+
 
 
 
