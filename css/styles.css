@@ -11,6 +11,7 @@
 /* var */
 :root{
  --color-primary:#0066FF;
+ --color-third: #939393;
 }
 
 /* navbar */
@@ -234,11 +235,39 @@
 }
 
 
+/* Section recomend */
+.card-text_p{
+  font-size: 15px;
+  color: var(--color-third);
+  padding: 0.3em;
+  letter-spacing: 2px;
+  text-align: justify;
+}
 
+.card-Rc_img{
+  width: 100%;
+}
 
+.card-Rc{
+  width: 354px;
+  height: 238px;
+}
 
+.card-precio{
+  font-size: 15px;
+  font-weight: 100;
+  color: var(--color-third);
+  text-decoration: line-through;
+}
 
+.card-txt_cost{
+  color: #000;
+}
 
+.card-txt_divi{
+  font-size: 10px;
+  color: var(--color-third);
+}
 
 
 
