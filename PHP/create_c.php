@@ -11,7 +11,7 @@ if (isset($_POST['subir'])) {
 		$ape_b = trim($_POST['Apellido_b']);
         $fecha = trim($_POST['Fecha']);
 		$email = trim($_POST['Email']);
-        $pass = trim($_POST['Contraseña']);
+        $pass = md5($_POST['Contraseña']);
 
 		// Puerta de acceso
 		$acceso = true;
@@ -106,26 +106,28 @@ if (isset($_POST['subir'])) {
 			$contador++;
 		}
 
+		//Fecha
 		$hoy = date("Y-m-d");
-		$fechaFormulario = "2016-11-09";
-
 		// Si la fecha es de apartir de hoy => true 
-		if ($hoy <= $fechaFormulario) {
-		
-		    echo "Fecha a partir de hoy";
+		if ($hoy <= $fecha) {
+		    echo "MAL";
 		}
 		else {
-		
-		    echo "Fecha pasado";
+		    echo "BIEN";
 		}
 
-
+		//Contraseña
+		if (password_verify('rasmuslerdorf', $pass)) {
+			$contador++;
+		} else {
+			$acceso=false;
+		}
 
 
         // ============================================================================
         // Deben existir 6 validaciones
         if($acceso==true){
-			$consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, Nom_empresa, Servicio, Mensaje) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio','$descri')";
+			$consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Correo, Contraseña, Fecha_nac) VALUES ('$nombre','$ape_a','$ape_b','$email','$pass','$fecha')";
 
 
 			$resultado = mysqli_query($conex,$consulta);

@@ -56,11 +56,11 @@
 
                     <div class="mb-4">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="Contraseña" class="form-control" placeholder="Escribe tu contraseña" required id="">
+                        <input type="password" name="Contraseña" class="form-control" placeholder="Escribe tu contraseña" required id="" minlength="8" maxlength="8" pattern="[a-z A-Z 0-9]{8,8}">
                     </div>
 
                     <div class="mb-5">
-                        <input type="checkbox" name="conected" class="form-check-input " id="" required>
+                        <input type="checkbox" name="conected" class="form-check-input " id="">
                         <label for="conected" class="form-check-label">Matenerme conectado</label>
                     </div>
 
