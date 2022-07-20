@@ -106,6 +106,22 @@ if (isset($_POST['subir'])) {
 			$contador++;
 		}
 
+		$hoy = date("Y-m-d");
+		$fechaFormulario = "2016-11-09";
+
+		// Si la fecha es de apartir de hoy => true 
+		if ($hoy <= $fechaFormulario) {
+		
+		    echo "Fecha a partir de hoy";
+		}
+		else {
+		
+		    echo "Fecha pasado";
+		}
+
+
+
+
         // ============================================================================
         // Deben existir 6 validaciones
         if($acceso==true){
