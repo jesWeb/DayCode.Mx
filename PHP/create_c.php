@@ -4,16 +4,14 @@ include("con_db.php");
 
 if (isset($_POST['subir'])) {
 
-	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Area']) >= 1) {
+	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 &&  strlen($_POST['Email']) >= 1 &&  strlen($_POST['Fecha']) >= 1 &&  strlen($_POST['Contraseña']) >= 1) {
 
 		$nombre = trim($_POST['Nombre']);
 		$ape_a = trim($_POST['Apellido_a']);
 		$ape_b = trim($_POST['Apellido_b']);
-		$telefo = trim($_POST['Telefono']);
+        $fecha = trim($_POST['Fecha']);
 		$email = trim($_POST['Email']);
-		$empresa = trim($_POST['Empresa']);
-		$servicio = trim($_POST['Lista']);
-		$descri = trim($_POST['Area']);
+        $pass = trim($_POST['Contraseña']);
 
 		// Puerta de acceso
 		$acceso = true;
@@ -108,33 +106,8 @@ if (isset($_POST['subir'])) {
 			$contador++;
 		}
 
-		// Telefono
-		if (is_numeric($telefo)) {
-			$contador++;
-		} else {
-			$acceso=false;
-		}
-
-		// Nombre de la empresa
-		if (!preg_match('/[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $empresa)){
-			echo "<p class='error'>Debe iniciar con mayúscula</p>";
-			$acceso=false;
-		}else{
-			$contador++;
-		}
-
-		// Select
-		if ($servicio=="Elige una opcion") {
-			echo "<p class='error'>Elija una opción</p>";
-			$acceso=false;
-		}
-		else{
-			// echo "<p class='error'>BIEN</p>";
-			$contador++;
-		}
-
         // ============================================================================
-        // Deben existir 7 validaciones
+        // Deben existir 6 validaciones
         if($acceso==true){
 			$consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, Nom_empresa, Servicio, Mensaje) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio','$descri')";
 
