@@ -12,6 +12,7 @@ if (isset($_POST['subir'])) {
         $fecha = trim($_POST['Fecha']);
 		$email = trim($_POST['Email']);
         $pass = md5($_POST['Contraseña']);
+		$copru_pass = trim($_POST['Contraseña']);
 
 		// Puerta de acceso
 		$acceso = true;
@@ -110,23 +111,16 @@ if (isset($_POST['subir'])) {
 		$hoy = date("Y-m-d");
 		// Si la fecha es de apartir de hoy => true 
 		if ($hoy <= $fecha) {
-		    echo "MAL";
+			$acceso=false;
+		    echo "TU FECHA DE NACIMIENTO";
 		}
 		else {
-		    echo "BIEN";
-		}
-
-		//Contraseña
-		if (password_verify('rasmuslerdorf', $pass)) {
 			$contador++;
-		} else {
-			$acceso=false;
 		}
-
 
         // ============================================================================
         // Deben existir 6 validaciones
-        if($acceso==true){
+        if($acceso==true && $contador==5){
 			$consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Correo, Contraseña, Fecha_nac) VALUES ('$nombre','$ape_a','$ape_b','$email','$pass','$fecha')";
 
 
@@ -145,7 +139,6 @@ if (isset($_POST['subir'])) {
         }
         echo $contador;
         // ============================================================================
-
     }else {
 	    ?> 
 	    	<h3 class="bad">¡Por favor complete los campos!</h3>
