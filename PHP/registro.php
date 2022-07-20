@@ -4,7 +4,7 @@ include("con_db.php");
 
 if (isset($_POST['subir'])) {
 
-	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Empresa']) >= 1 ) {
+	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Area']) >= 1) {
 
 		$nombre = trim($_POST['Nombre']);
 		$ape_a = trim($_POST['Apellido_a']);
@@ -78,7 +78,7 @@ if (isset($_POST['subir'])) {
 			//ERROR POSIBLE #1
 			$acceso=false;
 
-			//echo "<p class='error'>EMAIL ERRONEO</p>";
+			echo "<p class='error'>EMAIL ERRONEO</p>";
 		}
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -86,7 +86,7 @@ if (isset($_POST['subir'])) {
 
 		// Nombre
 		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $nombre)){
-			// echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
+			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
 			$contador++;
@@ -94,7 +94,7 @@ if (isset($_POST['subir'])) {
 
 		// Apellido #1
 		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $ape_a)){
-			// echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
+			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
 			$contador++;
@@ -102,7 +102,7 @@ if (isset($_POST['subir'])) {
 
 		// Apellido #2
 		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $ape_b)){
-			// echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
+			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
 			$contador++;
@@ -117,7 +117,7 @@ if (isset($_POST['subir'])) {
 
 		// Nombre de la empresa
 		if (!preg_match('/[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $empresa)){
-			// echo "<p class='error'>El nombre empresa por mayúscula</p>";
+			echo "<p class='error'>Debe iniciar con mayúscula</p>";
 			$acceso=false;
 		}else{
 			$contador++;
@@ -125,7 +125,7 @@ if (isset($_POST['subir'])) {
 
 		// Select
 		if ($servicio=="Elige una opcion") {
-			// echo "<p class='error'>VACIO</p>";
+			echo "<p class='error'>Elija una opción</p>";
 			$acceso=false;
 		}
 		else{
@@ -136,7 +136,6 @@ if (isset($_POST['subir'])) {
         // ============================================================================
         // Deben existir 7 validaciones
         if($acceso==true){
-            echo "<p>REGISTRO CORRECTO</p>";
 			$consulta = "INSERT INTO usuarios(Nombre, Primer_A, Segundo_A, Telefono, Correo, Nom_empresa, Servicio, Mensaje) VALUES ('$nombre','$ape_a','$ape_b','$telefo','$email','$empresa','$servicio','$descri')";
 
 
@@ -151,7 +150,7 @@ if (isset($_POST['subir'])) {
 			   <?php
 			}
         }else{
-            echo "<p>ALGO SALIO MAL</p>";
+            echo "<p>Registro NO realizado</p>";
         }
         echo $contador;
         // ============================================================================
