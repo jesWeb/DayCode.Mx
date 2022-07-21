@@ -32,7 +32,7 @@ if (isset($_POST['subir'])) {
 			// For que recorre todo el array "poin"
 			foreach($poin as &$elem){
 				// Condicionale de caracteres que NO deben aparecer
-				if($elem == '#' || $elem == '&' || $elem == '%' || $elem == '$' || $elem == '_' || $elem == '-' ||  $elem == '+'){
+				if($elem == '#' || $elem == '&' || $elem == '%' || $elem == '$' || $elem == '-' ||  $elem == '+'){
 					   $cont = $cont+1;
 				}
 			}
