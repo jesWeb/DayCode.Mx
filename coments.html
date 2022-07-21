@@ -40,7 +40,7 @@
         <div class="d-flex mt-5 align-content-center">
             <div class="bg-light  p-3 shadow mt-5 ">
                 <h3 class="text-center">Comparte tu historia con la comunidad Daycode </h3>
-            <form method="post" class="row g-3 mt-3 justify-content-center" id="">
+            <form method="post" class="row g-3 mt-3 justify-content-center" id="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                 <!--name  -->
               <div class="col-6">
                 <label for="" class="form-label">Nombre</label>
@@ -51,13 +51,13 @@
               <div class="col-6">
                 <label for="" class="form-label">Apellido Paterno</label>
                 <input type="text" class="form-control" name="Apellido_a" id="" placeholder="@Apellido" minlength="4"
-                  maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+                  maxlength="15" pattern="[a-zA-Z ]{4,20}" required>
               </div>
               <!--second-name  -->
               <div class="col-6">
                 <label for="" class="form-label">Apellido Materno</label>
                 <input type="text" class="form-control" name="Apellido_b" id="" placeholder="@Apellido" minlength="4"
-                  maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+                  maxlength="15" pattern="[a-zA-Z ]{4,20}" required>
               </div>
               
               <div class="col-6 col-md-6">
@@ -69,7 +69,7 @@
               <!-- services opcion -->
                <div class="col mt-4 form-floating">
                 <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista" required>
-                  <option selected>Elige una opcion</option>
+                  <option value="0">Elige una opcion</option>
                   <option value="Desarrollo Web">Desarrollo Web</option>
                   <option value="Desarrollo de Software">Desarrollo de Software</option>
                   <option value="Capacitación empresarial">Capacitación empresarial</option>
@@ -96,4 +96,10 @@
     </section>
 </body>
 <script src="./js/bootstrap.bundle.min.js"></script>
+<?php 
+    include("./PHP/testimonials.php");
+    if(isset($_POST['subir'])){
+      $email = $_POST['Email'];
+    }
+?>
 </html>
