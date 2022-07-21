@@ -1,10 +1,10 @@
 <?php 
 
-include("./con_testi.php");
+include("con_testi.php");
 
 if (isset($_POST['subir'])) {
 
-	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1 && strlen($_POST['Telefono']) >= 1 && strlen($_POST['Email']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Empresa']) >= 1 && strlen($_POST['Area']) >= 1) {
+	if (strlen($_POST['Nombre']) >= 1 && strlen($_POST['Apellido_a']) >= 1 && strlen($_POST['Apellido_b']) >= 1  && strlen($_POST['Email']) >= 1 && strlen($_POST['Lista']) >= 1 && strlen($_POST['Area']) >= 1) {
 
 		$nombre = trim($_POST['Nombre']);
 		$ape_a = trim($_POST['Apellido_a']);
@@ -123,7 +123,8 @@ if (isset($_POST['subir'])) {
 			$consulta = "INSERT INTO testimoniales(Nombre, Apellido_a, Apellido_b, Email, Curso, Mensaje) VALUES ('$nombre','$ape_a','$ape_b','$email','$curso','$mensaje')";
 
 
-			$resultado = mysqli_query($conex,$consulta);
+			$resultado = mysqli_query($conextion,$consulta);
+
 			if ($resultado) {
 				?> 
 					<h3 class="ok">¡Te has inscripto correctamente!</h3>
