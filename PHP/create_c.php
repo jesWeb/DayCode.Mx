@@ -84,7 +84,7 @@ if (isset($_POST['subir'])) {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 		// Nombre
-		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $nombre)){
+		if (!preg_match('/[a-zA-ZñÑáéíóúÁÉÍÓÚ]*$/', $nombre)){
 			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
@@ -92,7 +92,7 @@ if (isset($_POST['subir'])) {
 		}
 
 		// Apellido #1
-		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $ape_a)){
+		if (!preg_match('/[a-zA-ZñÑáéíóúÁÉÍÓÚ]*$/', $ape_a)){
 			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
@@ -100,7 +100,7 @@ if (isset($_POST['subir'])) {
 		}
 
 		// Apellido #2
-		if (!preg_match('/^[A-ZÁÉÍÓÚ][a-záéíóú]*$/', $ape_b)){
+		if (!preg_match('/[a-zA-ZñÑáéíóúÁÉÍÓÚ]*$/', $ape_b)){
 			echo "<p class='error'>El nombre debe empezar por mayúscula</p>";
 			$acceso=false;
 		}else{
