@@ -40,6 +40,9 @@
   background: blue;
   color: #fff;
 }
+
+
+
 /* prom-img */
 .prom{
   margin-top: 8rem;
@@ -93,13 +96,6 @@
   padding: 2em;
 }
 
-/* Services */
-
-
-
-
-
-
 
 /* Section team*/
 .team {
@@ -151,13 +147,28 @@
   text-align: start;
 }
 
-.fondo {
-  background-image: url(../IMG/footer-wave.svg);
-  background-repeat: no-repeat;
-  height: 20vh;
+/* section day coders */
 
+.coder{
+  border-radius: 10px;
 }
 
+.coders-img{
+  text-align: center;
+  padding: 20px;
+}
+
+.coders-img_picture{
+  width: 60%; 
+}
+
+.coder-social{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #000;
+  height: 80px;
+}
 
 
 /* slider-comments */
@@ -169,8 +180,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 500px; */
-  /* background: linear-gradient(-150deg, white 50%, rgba(0, 136, 169, 1) 40%); */
+ 
 }
 
 .img-text-sl {
@@ -233,7 +243,7 @@
   color: var(--color-third);
 }
 
-
+/* form-contact */
 
 input:invalid {
   border-color: #DD2C00;
@@ -256,47 +266,6 @@ width: 100%;
 background-color: #DD2C00;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/* section day coders */
-
-.coder{
-  border-radius: 10px;
-}
-
-
-.coders-img{
-  text-align: center;
-  padding: 20px;
-}
-
-.coders-img_picture{
-  width: 60%; 
-}
-
-.coder-social{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: #000;
-  height: 80px;
-}
-
-
-
-
-
-
-/* Formulario */
 /* Contenedor */
 .form {
   font-family: 'Roboto', sans-serif;
@@ -448,9 +417,6 @@ textarea {
   margin-top: 3px;
 }
 
-
-
-/*/////////////////////////////*/
 .txt-anuncio{
   text-align: justify;
   font-size: 18px;
@@ -482,4 +448,11 @@ textarea {
   max-height: 220px;
   width: auto;
   height: auto;
+}
+
+/* footer */
+.fondo {
+  background-image: url(../IMG/footer-wave.svg);
+  background-repeat: no-repeat;
+  height: 100%;
 }
