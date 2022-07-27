@@ -1,56 +1,34 @@
 </body>
 </main>
 <!-- Footer -->
-<footer class="fondo container-fluid mt-5">
-  <div class="d-flex justify-content-center align-items-center">
-    <nav class="nav-footer">
-      <div class="">
-        <div class="row justify-content-beetwen">
-          <div class="col">
-            <ul>
-              <li>Academy</li>
-              <li>Servicios</li>
-              <li>Contacto</li>
-              <li><a href="">Testimonios</a></li>
-              <li><a href="">Otro</a></li>
+<footer class="fondo container-fluid   mt-5 py-4">
+    <div class="container">
+        <div class="row">
+            <!--logo -->
+            <a href="#" class="  col-lg-4 text-center ">
+                <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="logo Daycode.MX"  class="m-3">
+            </a>
+
+            <ul class="col-lg-4 list-unstyled text-center text-black">
+                <li><a href="" class="text-decoration-none">Academy</a></li>
+                <li><a href="" class="text-decoration-none">Servicos</a></li>
+                <li><a href="" class="text-decoration-none">Comentarios</a></li>
+                <li><a href="" class="text-decoration-none">Contacto</a></li>
             </ul>
-          </div>
-          <div class="col">
-            <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="">
-          </div>
-          <div class="col">
-            <!-- ´redes -->
-          </div>
+            <!-- ´redes sociales  -->
+            <ul class="col-lg-4 list-unstyled">
+                <li class="font-weight-bold text-uppercase text-center">Redes sociales</li>
+               <li class="d-flex justify-content-evenly mt-3 aling-content-center">
+                <!-- facebook -->
+                <a href="" class="text-decoration-none "><i class="bi bi-facebook"></i></a>
+                <!-- ´linkedin -->
+                <a href="" class="text-decoration-none "><i class="bi bi-linkedin"></i></a>
+                <!-- íntagrm -->
+                <a href="" class="text-decoration-none "><i class="bi bi-instagram"></i></a>
+               </li>
+            </ul>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-    </nav>
-  </div>
+    </div>
 </footer>
 <!-- Bp-js -->
 <script src="<?= base_url?>assets/js/bootstrap.bundle.min.js"></script>
