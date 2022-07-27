@@ -134,7 +134,7 @@ if($modal == 0){
           }else {  ?>
 
             <a href="<?= base_url?>User/login.php"  class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar sesion</a>
-            <a  href="<?= base_url?>User/login.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</a>
+            <a  href="<?= base_url?>User/registro.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</a>
             <?php
             }
            ?>
