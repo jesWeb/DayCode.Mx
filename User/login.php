@@ -1,14 +1,12 @@
 <?php 
 
-    session_start();
+    
      $pagina_admin = 2;     
      $pagina_modificacion= 0;
      $nombre_pagina = "Home";
      $pagina =0;
      $modal=0;
      require_once '../includes/header.php';
-
-
 
     if (session_start ()) {
         # code...

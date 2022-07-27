@@ -1,7 +1,5 @@
 <?php
 
-
-
 if($pagina == 1){
   require_once 'config/parameters.php';
   require_once 'config/conexionDB.php';
@@ -23,6 +21,7 @@ if($pagina == 1){
 ?>
 <!DOCTYPE html>
 <html lang="es-Mx">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,8 +39,6 @@ if($modal == 0){
 }else {
   
 ?>
-
-
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -72,7 +69,7 @@ if($modal == 0){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quizá luego...</button>
-        <a href="user/create-Account.html" type="button"   class="btn btn-primary">Obtener descuento</a>
+        <a href="user/create-Account.html" type="button" class="btn btn-primary">Obtener descuento</a>
       </div>
     </div>
   </div>
@@ -84,7 +81,7 @@ if($modal == 0){
 <!-- navbar -->
 <div>
   <header class="">
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow navbar-main ">
+    <nav class="navbar navbar-expand-md navbar-light  bg-light shadow navbar-main ">
       <div class="container-fluid">
         <!-- branding -->
         <a href="" class="navbar-brand ">
@@ -99,12 +96,51 @@ if($modal == 0){
         <div class="collapse navbar-collapse" id="mainNav">
           <div class="nav ms-auto ">
             <!-- links -->
+            <?php
+              if (isset($_SESSION['login'])==1) { ?>
+            <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
+            <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
+            <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+            
+            <?php  
+          } else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
             <a href="./services.html" class="nav-link nav-link_n m-2">Servicios</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Academy</a>
             <a href="" class="nav-link nav-link_n m-2">Contacto</a>
-            <a href="<?= base_url?>User/login.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar sesion</a>
-            <a href="<?= base_url?>User/create-Acount.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</a>
+            <?php
+            }
+            ?>
+
+
+           
+            <?php
+           if (isset($_SESSION['login'])==1) { ?>
+            <li class="nav-item dropdown m-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <?php 
+                  echo $_SESSION['nombre'].' '.$_SESSION ['apellidos'];
+                ?>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">settings</a></li>
+                <li><a class="dropdown-item" href="#">perfil</a></li>
+                <li><a class="dropdown-item" href="#">ayuda</a></li>
+                <li><a class="dropdown-item" href="<?= base_url?>User/procesos/salir.php">exit</a></li>
+              </ul>
+            </li>
+            <?php
+          }else {  ?>
+
+            <a href="<?= base_url?>User/login.php"  class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar sesion</a>
+            <a  href="<?= base_url?>User/login.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</a>
+            <?php
+            }
+           ?>
+
+
+
           </div>
     </nav>
   </header>
