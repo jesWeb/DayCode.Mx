@@ -35,7 +35,7 @@
                         <h2 class="fw-bl text-center pt-4 mb-4">Crear una cuenta</h2>
 
                         <!-- form -->
-                        <form action="" method="post" >
+                        <form action="" method="post" id="formulario-login-cuenta">
 
                             <div class="mb-4">
                                 <label for="text" class="form-label">Nombre</label>
@@ -44,12 +44,12 @@
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Paterno</label>
-                                <input type="text" name="Apellido_P" id="" class="form-control"
+                                <input type="text" name="apellidos" id="" class="form-control"
                                     placeholder="Primer apellido:">
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Materno</label>
-                                <input type="text" name="Apellido_Mgit " id="" class="form-control"
+                                <input type="text" name="apellidos " id="" class="form-control"
                                     placeholder="Segundo apellido">
                             </div>
 
@@ -57,18 +57,43 @@
                                 <label for="date">Fecha de Naciemiento</label>
                                 <input type="date" name="Fecha" id="" class="form-control" required min="">
                             </div>
-
+                            <!-- opcion  -->
+                            <div class=" mb-4 form-floating">
+                                <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista"
+                                    required>
+                                    <option value="Elige una opcion">Elige una opcion</option>
+                                    <option value="1">Linea</option>
+                                </select>
+                                <label for="floatingSelect">estudiante</label>
+                            </div>
+                            <!-- SEXO -->
+                            <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioX"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioX"
+                                    id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Femenino
+                                </label>
+                            </div>
+                            </div>
+                            <!--  -->
                             <div class="mb-4">
                                 <label for="email" class="form-label"> Correo Electronico</label>
                                 <input type="email" name="Email" class="form-control" placeholder="Escribe tu correo"
                                     required id="">
                             </div>
-
+                            <!--  -->
                             <div class="mb-4">
                                 <label for="password">Contraseña</label>
                                 <input type="password" name="Contraseña" class="form-control"
-                                    placeholder="Escribe tu contraseña" required id="" minlength="8" maxlength="8"
-                                    pattern="[a-z A-Z 0-9]{8,8}">
+                                    placeholder="Escribe tu contraseña" required id="" minlength="8" maxlength="8">
                             </div>
 
                             <div class="mb-5">
@@ -77,7 +102,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <button type="submit" class="btn btn-primary" name="subir">Crear cuenta</button>
+                                <input type="submit" class="btn btn-primary" name="subir" value="Crear cuenta">
                             </div>
 
                             <div class="my-4">
