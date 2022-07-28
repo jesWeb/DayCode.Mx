@@ -1,5 +1,6 @@
 <?php 
 include_once '../../config/ConexionDB.php';
+session_start();
 if (isset($_REQUEST['correo-electronico'])) {
     if (isset($_REQUEST['contraseña'])) {
         $email = $_REQUEST['correo-electronico'];
@@ -17,7 +18,7 @@ if (isset($_REQUEST['correo-electronico'])) {
                 $querycliente = "SELECT * FROM cliente WHERE email='$email'";
                 $cliente = mysqli_query($conexion, $querycliente);
                 $row = mysqli_fetch_assoc($cliente);
-                session_start();
+                
                 $_SESSION['login'] = 1;
                 $_SESSION['idCliente'] = $row['idCliente'];
                 $_SESSION['nombre'] = $row['nombre'];
@@ -30,7 +31,7 @@ if (isset($_REQUEST['correo-electronico'])) {
                 $querycliente = "SELECT * FROM cliente WHERE email='$email'";
                 $cliente = mysqli_query($conexion, $querycliente);
                 $row = mysqli_fetch_assoc($cliente);
-                session_start();
+                
                 $_SESSION['login'] = 1;
                 $_SESSION['idCliente'] = $row['idCliente'];
                 $_SESSION['nombre'] = $row['nombre'];
