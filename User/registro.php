@@ -69,14 +69,14 @@
                             <!-- SEXO -->
                             <div class="mb-4">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioX"
+                                <input class="form-check-input" type="radio" name="sexos"
                                     id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Masculino
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioX"
+                                <input class="form-check-input" type="radio" name="sexos"
                                     id="flexRadioDefault2" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Femenino

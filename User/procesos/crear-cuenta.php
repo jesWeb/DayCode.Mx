@@ -12,7 +12,7 @@ if (!empty($_POST )) {
         $fecha=$_POST["Fecha"];
         $Passw=$_POST["Contraseña"];
         $studet=$_POST["Lista"];
-        $Sex=$_POST["flexRadioX"];
+        $Sex=$_POST["sexos"];
         $date_creacion= $hoy = date("Y-m-d H:i:s");  
         $querycliente = "INSERT INTO `cliente`(`idCliente`, `nombre`, `apellidos`, `fechaNac`, `idTUsuario`, `email`, `telefono`, `idServicio`, `Status`, `Sexo`, `password`, `dateCreacion`, `dateModificacion`, `dateEliminacion`, `statusEliminacion`) 
         VALUES (null,'$nombre','$apellido','$fecha','[value-5]','$mail','[value-7]','$studet','[value-9]','$Sex','$Passw','$date_creacion','[value-13]','[value-14]','[value-15]')";

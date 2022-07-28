@@ -1,6 +1,5 @@
 <?php 
 
-    
      $pagina_admin = 2;     
      $pagina_modificacion= 0;
      $nombre_pagina = "Home";

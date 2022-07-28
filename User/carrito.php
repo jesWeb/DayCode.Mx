@@ -76,24 +76,9 @@ if ($_SESSION['login']==1) {
         </table>
       </div>
     </div>
-
-
-
-
   </section>
 
-
-
-
 </body>
-
-
-
-
-
-
-
-
 
 <?php 
 
