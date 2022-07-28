@@ -44,13 +44,13 @@
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Paterno</label>
-                                <input type="text" name="apellidos" id="" class="form-control"
+                                <input type="text" name="ape_a" id="" class="form-control"
                                     placeholder="Primer apellido:">
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Materno</label>
-                                <input type="text" name="apellidos " id="" class="form-control"
-                                    placeholder="Segundo apellido">
+                                <input type="text" name="ape_b" id="" class="form-control"
+                                    placeholder="Segundo ape_b">
                             </div>
 
                             <div class="mb-4">
