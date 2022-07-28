@@ -26,7 +26,7 @@
             <div class="col ">
                 <!-- img  -->
                 <div class="text-center border-bottom border-primary border-2">
-                    <img src="./IMG/DAYCODE-nav.png" class="img-fluid mb-2 " alt="">
+                    <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" class="img-fluid mb-2 " alt="">
                 </div>
                 <!-- title -->
                 <h2 class="fw-bl text-center pt-4 mb-4">Iniciar Seción</h2>

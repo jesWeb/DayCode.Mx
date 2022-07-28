@@ -44,12 +44,12 @@
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Paterno</label>
-                                <input type="text" name="Apellido_a" id="" class="form-control"
+                                <input type="text" name="Apellido_P" id="" class="form-control"
                                     placeholder="Primer apellido:">
                             </div>
                             <div class="mb-4">
                                 <label for="text" class="form-label">Apellido Materno</label>
-                                <input type="text" name="Apellido_b" id="" class="form-control"
+                                <input type="text" name="Apellido_Mgit " id="" class="form-control"
                                     placeholder="Segundo apellido">
                             </div>
 
@@ -92,24 +92,9 @@
         </div>
     </section>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php 
+
 require_once '../includes/footer.php';
+
 
 ?>
