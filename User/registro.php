@@ -35,7 +35,7 @@
                         <h2 class="fw-bl text-center pt-4 mb-4">Crear una cuenta</h2>
 
                         <!-- form -->
-                        <form action="" method="post" id="formulario-login-cuenta">
+                        <form id="formulario-login-cuenta">
 
                             <div class="mb-4">
                                 <label for="text" class="form-label">Nombre</label>

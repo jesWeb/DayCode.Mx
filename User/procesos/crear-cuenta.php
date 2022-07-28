@@ -1,10 +1,10 @@
 <?php 
 
-include_once '../../config/ConexionDB.php';
+require_once '../../config/conexionDB.php';
 
-if (!empty($_POST )) {
-    if (empty($_POST["Nombre"]) or empty($_POST["apellidos"]) or empty($_POST["Fecha"]) or empty($_POST["Email"])   or empty($_POST["Contraseña"]) or empty($_POST["conected"])    ) {
-        echo '<div class="alert alert-danger " role="alert">Rellena los campos Por favor </div>';
+if (isset($_POST)) {
+    if($_POST['Nombre'] == ''){
+        echo json_encode('error');
     }else{
         $nombre=$_POST["Nombre"];
         $apellido=$_POST["apellidos"];
@@ -14,16 +14,16 @@ if (!empty($_POST )) {
         $studet=$_POST["Lista"];
         $Sex=$_POST["sexos"];
         $date_creacion= $hoy = date("Y-m-d H:i:s");  
-        $querycliente = "INSERT INTO `cliente`(`idCliente`, `nombre`, `apellidos`, `fechaNac`, `idTUsuario`, `email`, `telefono`, `idServicio`, `Status`, `Sexo`, `password`, `dateCreacion`, `dateModificacion`, `dateEliminacion`, `statusEliminacion`) 
-        VALUES (null,'$nombre','$apellido','$fecha','[value-5]','$mail','[value-7]','$studet','[value-9]','$Sex','$Passw','$date_creacion','[value-13]','[value-14]','[value-15]')";
+        $querycliente = "INSERT INTO `cliente`(`idCliente`, `nombre`, `apellido_a`, `apellido_b`, `fechaNac`, `idTUsuario`, `email`, `telefono`, `idServicio`, `Estatus`, `Sexo`, `Contra`, `dateCreacion`, `dateModificacion`, `dateEliminacion`, `statusEliminacion`) VALUES 
+        (NULL,'$nombre',NULL,'$apellido','$fecha','$studet','$mail',NULL,1,1,'$Sex','$Passw','$date_creacion',NULL,NULL,0)";
         $cliente = mysqli_query($conexion, $querycliente); 
-     }if ($sql==1) {
+     }
+     if ($cliente) {
         echo json_encode('success');
     } else {
         echo json_encode('error');
     }
 }
-
-
+//var_dump($cliente);
 
 ?>
