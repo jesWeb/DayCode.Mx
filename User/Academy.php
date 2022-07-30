@@ -1,5 +1,4 @@
 <?php
-
 $pagina_admin = 2;     
 $pagina_modificacion= 0;
 $nombre_pagina = "Home";
@@ -13,11 +12,63 @@ else {session_start ();
    # code...
 }
 
+require '../config/parameters.php';
+
 $nombre_pagina = "inicio";
 require_once '../includes/header.php';
-
+print_r($_SESSION);
 include_once '../config/ConexionDB.php';
 $productos = "SELECT * FROM cursos ";
+//instrucciones de carrito//
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$token = isset($_GET['token']) ? $_GET['token'] : '';
+
+if ($id == ' ' || $token == ' ' ) {
+    echo 'Error al procesar la pericion';
+    exit;
+}else {
+
+    $token_tmp = hash_hmac('sha1', $ID, KEY_TOKEN);
+
+    if ($token == $token_tmp) {
+        /*direccion a base de datos */
+        $sql =$con->prepare("SELECT count(id) From cursos WHERE id=? AND activo1");
+        $sql->execute([$ID]);
+        if ($sql->fetchColumn() > 0) {
+            $sql =$con->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
+            activo=1 LIMIT 1");
+            $sql->execute([$ID]);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $nombre = $row['Nombre'];
+            $cate = $row['Categoria'];
+            $des = $row['Descripcion'];
+            $cost = $row['Costo'];
+            $dir_images = 'images/courses/' . $ID .'/';
+           /* imagenes */
+            
+           $rutaImg = $dir_images . 'Principal.png';
+            
+            if (!file_exists($rutaImg)) {
+                $dir =dir($dir_images);
+                /** tipos de archivo img */
+                while (($archivo = $dir->read()) !=false ) {
+                    if ($archivo != 'principal.jpg' && (strpos($archivo,'png') || strpos ($archivo, 'jpeg'))) {
+                        $imagenes[] =$dir_images . $archivo ;
+                    }
+                }
+                $dir->close();
+            }
+            else {
+                echo 'error al procesar la peticion';
+                exit;
+            }
+        }   else{
+            echo 'error al procesar la peticion';
+                exit;
+        }
+    }
+}
+
 ?>
 
 <body>
@@ -58,7 +109,7 @@ $productos = "SELECT * FROM cursos ";
                         ?>
                     <div class="card-group grid-item">
                         <div class="card m-3">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="https://picsum.photos/200" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h4 class="card-title text-center"><?php echo $row ["Nombre"];?></h4>
                                 <!-- ´texto -->
@@ -72,7 +123,10 @@ $productos = "SELECT * FROM cursos ";
                             <div class="card-footer">
                                 <!-- ´btn -->
                                 <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
-                                <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
+                                <button href="#" class=" btn btn-outline-primary rounded-pill-3"
+                                    type="button"
+                                    onclick="addProduct(<?php echo  $row['ID']; ?>, '<?php echo $token_tmp;  ?>' )">Agregar
+                                    carrito</button>
                             </div>
                         </div>
                     </div>

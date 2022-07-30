@@ -1,5 +1,7 @@
 <?php
 
+
+
 if($pagina == 1){
   require_once 'config/parameters.php';
   require_once 'config/conexionDB.php';
@@ -101,12 +103,13 @@ if($modal == 0){
             <?php
               if (isset($_SESSION['login'])==1) { ?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
+
             <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
-            <a href="" class="nav-link m-2"><i class="bi bi-cart2"></i></a>
+            <a href="../User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2"> </i>Compras<span id="num_cart" class="badge bg-danger">
+              <?php echo $num_cart;?>
+            </span></a>
 
-            <a href="../layout/services.php" class="nav-link nav-link_n m-2">Cursos</a>
-            <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
 
             <?php  
           } else{?>
