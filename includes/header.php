@@ -84,7 +84,7 @@ if($modal == 0){
     <nav class="navbar navbar-expand-md navbar-light  bg-light shadow navbar-main ">
       <div class="container-fluid">
         <!-- branding -->
-        <a href="" class="navbar-brand ">
+        <a href="<?= base_url?>index.php" class="navbar-brand ">
           <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="brand DAYCODE.mx" class=" ms-md-0">
         </a>
         <!-- btn -->
@@ -101,20 +101,20 @@ if($modal == 0){
                 <?php
                   if($_SESSION['idTUsuario']!=1){ ?>
                     <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-                    <a href="../layout/services.php" class="nav-link nav-link_n m-2">Cursos</a>
-                    <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+                    <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
+                    <a href="<?= base_url?>User/panel.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
                   <?php  
                   }else {?>
                     <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-                    <a href="../layout/services.php" class="nav-link nav-link_n m-2">Control panel</a>
+                    <a href="<?= base_url?>crud/panel_control.php" class="nav-link nav-link_n m-2">Control panel</a>
                   <?php
                   }
           }
           else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="../layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
-            <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
-            <a href="../layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
+            <a href="<?= base_url?>layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="<?= base_url?>layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
             <?php
             }
             ?>

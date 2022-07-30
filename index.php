@@ -1,6 +1,7 @@
 <!-- soy un comentario -->
 <?php
 
+
 if (session_start ()) {
     # code...
 }
@@ -25,7 +26,7 @@ require_once 'includes/header.php';
 <div class="prom container mb-5">
   <!-- img -->
   <div class="prom-img">
-    <img src="./IMG/prueba.png" class="img-fluid" alt="">
+    <img src="./assets/IMG/hader.png" class="img-fluid" alt="">
   </div>
 </div>
 <div class="container">
@@ -33,11 +34,11 @@ require_once 'includes/header.php';
   <div class="row bg-light mb-4">
     <!--  -->
     <div class="col">
-      <img src="./IMG/DAYCODE-logo.png" class=" mt-3 img-fluid" alt="">
+      <img src="./assets/IMG/DAYCODE-logo.png" class=" mt-3 img-fluid" alt="">
     </div>
     <!--  -->
     <div class="col">
-      <p><span class="h3">DayCode.mx</span> es una agencia digital mexicana especializada en IT.
+      <p><span class="h3">DayCode.mx</span> Es una agencia digital mexicana especializada en IT.
         <br>Conocemos a
         nuestras audiencias de principio a fin, Esto nos permite desarrollar posibilidades en el
         ámbito
@@ -49,8 +50,12 @@ require_once 'includes/header.php';
   <section class="mb-5 mt-4 ">
     <div class=" mb-5">
       <div class="col-7">
-        <h3>titulo</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla odit ipsa officia qui vero a ut quisquam ex tenetur enim iste consequuntur, quasi et nemo possimus doloremque ducimus earum sed explicabo eveniet eaque! Obcaecati blanditiis esse, nam itaque illum magnam reprehenderit. Assumenda eaque sapiente maxime explicabo libero nulla odit earum.</p>
+        <h3>El crecimiento de tu negocio nuestro principal objetivo.</h3>
+      <p>DAYCODE México proporciona servicios de Desarrollo Web, Publicidad y Desarrollo 
+         de Software a propietarios de pequeñas y medianas empresas, asi como a 
+         proveedores que desean hacer crecer su negocio. Con nuestros servicios de su 
+         negocio tendrá un lugar asegurado en la página principal de resultados de los 
+         más importantes buscadores de internet</p>
       </div>
     </div>
     <!--cards-->
@@ -59,11 +64,11 @@ require_once 'includes/header.php';
         <div class="col">
           <div class="card border-0">
             <div class=" text-center p-3">
-              <img src="./IMG/icons/SEO-icon.svg" alt="">
+              <img src="./assets/IMG/card-java.jpg" class="card-img-top"  alt="">
             </div>
             <div class="card-body text-center">
-              <h3 class="card-titulo">seo</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
+              <h3 class="card-titulo">Introducción a la programación</h3>
+              <p class="card-text">Aprender a programar, entiende los fundamentos de programación, Diagramas de Flujo y Pseudocodigos, Lógica de Programación desde cero, con este increible curso de iniciación. </p>
             </div>
 
           </div>
@@ -71,11 +76,11 @@ require_once 'includes/header.php';
         <div class="col">
           <div class="card border-0">
             <div class=" text-center p-3">
-              <img src="./IMG/icons/web-icon.svg" alt="">
+              <img src="./assets/IMG/card-web-1.jpg" class="card-img-top" alt="">
             </div>
             <div class="card-body text-center">
-              <h3 class="card-titulo">web</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
+              <h3 class="card-titulo">Desarrollo Web</h3>
+              <p class="card-text">En este curso aprenderás a crear tu sitio web partiendo del prototipo en papel. Te sumergirás en las mejores prácticas del desarrollo web, trabajando con HTML y CSS. </p>
             </div>
 
           </div>
@@ -83,11 +88,11 @@ require_once 'includes/header.php';
         <div class="col">
           <div class="card border-0">
             <div class=" text-center p-3">
-              <img src="./IMG/icons/Data-icon.svg" alt="">
+              <img src="./assets/IMG/card-programa-2.jpg" class="card-img-top" alt="">
             </div>
             <div class="card-body text-center">
-              <h3 class="card-titulo">Data Base</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
+              <h3 class="card-titulo">Informática</h3>
+              <p class="card-text">Aprende cómo empezar a usar un computador desde el principio, cuáles son sus partes, cómo conectarlo e instalar programas y ofimatica básica.</p>
             </div>
 
           </div>
