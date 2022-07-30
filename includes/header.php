@@ -31,6 +31,8 @@ if($pagina == 1){
   <!-- css -->
   <link rel="stylesheet" href="<?= base_url?>assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?= base_url?>assets/css/styles.css" />
+  <!-- icons boostrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <!-- Modal -->
 <?php 
@@ -101,6 +103,7 @@ if($modal == 0){
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
             <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+            <a href="" class="nav-link m-2"><i class="bi bi-cart2"></i></a>
             
             <?php  
           } else{?>
