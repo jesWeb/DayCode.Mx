@@ -99,15 +99,15 @@ if($modal == 0){
             <?php
               if (isset($_SESSION['login'])==1) { ?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
-            <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+            <a href="../layout/services.php" class="nav-link nav-link_n m-2">Cursos</a>
+            <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
             
             <?php  
           } else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="./services.html" class="nav-link nav-link_n m-2">Servicios</a>
-            <a href="./Academy.html" class="nav-link nav-link_n m-2">Academy</a>
-            <a href="" class="nav-link nav-link_n m-2">Contacto</a>
+            <a href="../layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="../layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
             <?php
             }
             ?>
