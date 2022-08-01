@@ -27,6 +27,7 @@ if (isset($_REQUEST['correo-electronico'])) {
                 $_SESSION['idTUsuario'] = $row['idTUsuario'];
                 $_SESSION['sexo'] = $row['Sexo'];
                 $_SESSION['dateCreacion'] = $row['dateCreacion'];
+
             }else if($pass == $row['Contra']){
                 echo json_encode('success');
                 $querycliente = "SELECT * FROM cliente WHERE email='$email'";
@@ -37,7 +38,7 @@ if (isset($_REQUEST['correo-electronico'])) {
                 $_SESSION['idCliente'] = $row['idCliente'];
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['apellidos'] = $row['apellido_a'];
-              
+                                            
                 $_SESSION['idTUsuario'] = $row['idTUsuario'];
                
                 $_SESSION['status'] = $row['Estatus'];

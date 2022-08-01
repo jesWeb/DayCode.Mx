@@ -1,47 +1,20 @@
-<!DOCTYPE html>
-<html lang="es-Mx">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayAcademy</title>
-    <!-- css -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-</head>
-<!-- navbar -->
-<div>
-    <header class="">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow navbar-main ">
-            <div class="container-fluid">
-                <!-- branding -->
-                <a href="" class="navbar-brand ">
-                    <img src="./IMG/DAYCODE-nav.png" alt="brand DAYCODE.mx" class=" ms-md-0">
-                </a>
-                <!-- btn -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                    aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- items -->
-                <div class="collapse navbar-collapse" id="mainNav">
-                    <div class="nav ms-auto ">
-                        <!-- links -->
-                        <a href="index.html" class="nav-link nav-link_n active m-2">Home</a>
-                        <a href="./services.html" class="nav-link nav-link_n m-2">Servicios</a>
-                        <a href="./Academy.html" class="nav-link nav-link_n m-2">Academy</a>
-                        <a href="" class="nav-link nav-link_n m-2">Contacto</a>
-                        <button class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar sesion</button>
-                        <button class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</button>
-                    </div>
-        </nav>
-    </header>
-</div>
+session_start();
+     $pagina_admin = 2;     
+     $pagina_modificacion= 0;
+     $nombre_pagina = "Home";
+     $pagina =0;
+     $modal=0;
+
+require_once '../includes/header.php';
+
+?>
+
+<main>
 
 <body>
-    <div class="container">
+<div class="container">
         <!-- ROW Presentación -->
         <div class="mt-5">
             <div class="row justify-content-center align-content-center ">
@@ -94,44 +67,60 @@
                             </div>
                         </div>
                     </div>
-                
+                    <!-- curso1 -->
+                    <div class="col-md-4 mt-3">
+                        <!-- ´card -->
+                        <div class="card card-academy border-0">
+                            <!-- card-img -->
+                            <img src="https://picsum.photos/500/300" class="card-img-top rounded-2  " alt="">
+                            <!-- card-content -->
+                            <div class="card-body card-academy_content bg-ligth ">
+                                <!-- title-->
+                                <h4 class="card-title text-center">Seo y ADS</h4>
+                                <!-- ´texto -->
+                                <p class="card-text">Precio <span>$4,150</span></p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima,
+                                    maiores perspiciatis ipsum omnis incidunt veritatis!</p>
+                                <p class="card-text h3">$1200</p>
+                                <div class="mt-5 text-center">
+                                    <!-- ´btn -->
+                                    <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
+                                    <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- curso1 -->
+                    <div class="col-md-4 mt-3">
+                        <!-- ´card -->
+                        <div class="card card-academy border-0">
+                            <!-- card-img -->
+                            <img src="https://picsum.photos/500/300" class="card-img-top rounded-2  " alt="">
+                            <!-- card-content -->
+                            <div class="card-body card-academy_content bg-ligth ">
+                                <!-- title-->
+                                <h4 class="card-title text-center">Seo y ADS</h4>
+                                <!-- ´texto -->
+                                <p class="card-text">Precio <span>$4,150</span></p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima,
+                                    maiores perspiciatis ipsum omnis incidunt veritatis!</p>
+                                <p class="card-text h3">$1200</p>
+                                <div class="mt-5 text-center">
+                                    <!-- ´btn -->
+                                    <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
+                                    <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
     </div>
 </body>
-<!-- Footer -->
-<footer class="fondo container-fluid  mt-5 py-4">
-    <div class="container">
-        <div class="row">
-            <!--logo -->
-            <a href="#" class="  col-lg-4 text-center ">
-                <img src="./IMG/DAYCODE-nav.png" alt="logo Daycode.MX"  class="m-3">
-            </a>
+</main>
 
-            <ul class="col-lg-4 list-unstyled text-center text-black">
-                <li><a href="" class="text-decoration-none">Academy</a></li>
-                <li><a href="" class="text-decoration-none">Servicos</a></li>
-                <li><a href="" class="text-decoration-none">Comentarios</a></li>
-                <li><a href="" class="text-decoration-none">Contacto</a></li>
-            </ul>
-            <!-- ´redes sociales  -->
-            <ul class="col-lg-4 list-unstyled">
-                <li class="font-weight-bold text-uppercase text-center">Redes sociales</li>
-               <li class="d-flex justify-content-evenly mt-3 aling-content-center">
-                <!-- facebook -->
-                <a href="" class="text-decoration-none "><i class="bi bi-facebook"></i></a>
-                <!-- ´linkedin -->
-                <a href="" class="text-decoration-none "><i class="bi bi-linkedin"></i></a>
-                <!-- íntagrm -->
-                <a href="" class="text-decoration-none "><i class="bi bi-instagram"></i></a>
-               </li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<!-- Bp-js -->
-<script src="./js/bootstrap.bundle.min.js"></script>
-
-</html>
+<?php 
+require_once '../includes/footer.php';
+?>

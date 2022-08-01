@@ -36,7 +36,7 @@ require_once '../includes/header.php';
             if($resultado_e_i){
                 echo "<script language='JavaScript'>
                     alert('Los datos fueron insertados');
-                    location.assign('../User/panel.php');
+                    location.assign('../crud/panel_control.php');
                 </script>";
             }else{
                 echo "<script language='JavaScript'>

@@ -24,7 +24,7 @@ formulario_logeo.addEventListener("submit", function (e) {
       } else {
         let timerInterval;
         Swal.fire({
-          title: "Estas siendo redirigido!",
+          title: "Estas siendo x redirigido!",
           text: "Te has loegeado exitosamente...",
           html: "I will close in <b></b> milliseconds.",
           timer: 2000,
@@ -44,7 +44,7 @@ formulario_logeo.addEventListener("submit", function (e) {
           if (result.dismiss === Swal.DismissReason.timer) {
             console.log("I was closed by the timer");
             window.location.href =
-              "http://localhost/DayCode.Mx/user/panel.php";
+              "http://localhost/DayCode.Mx/index.php";
           }
         });
       }
