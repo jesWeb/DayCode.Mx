@@ -106,7 +106,7 @@ if($modal == 0){
 
             <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
-            <a href="../User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2"> </i>Compras<span id="num_cart" class="badge bg-danger">
+            <a href="../User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2">Compras </i><span id="num_cart" class="badge ms-2 p-2 bg-danger">
               <?php echo $num_cart;?>
             </span></a>
 

@@ -1,23 +1,26 @@
 <?php 
 
 include_once '../../config/parameters.php';
-
-if (isset($_POST['id'])) {
+session_start();
+if (isset($_POST['id'])) {    
 
     $id = $_POST['id'];
     $token = $_POST['token'];
 
     $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
     ECHO $token.'<br>';
-    echo 'token_temp'.$token_tmp;
-    if ($token == $token_tmp) { 
-        
-        if (isset( $_SESSION['carrito'][' productos '] [$id])) {
-            $_SESSION['carrito'][' productos '] [$id] += 1;
-         }else {
-            $_SESSION['carrito'][' productos '] [$id] =1;
+    echo 'token_tmp'.$token_tmp;
+   
+    if ($token == $token_tmp) {      
+        if (isset( $_SESSION['carrito']['productos'] [$id])) {
+            
+            $_SESSION['carrito']['productos'] [$id] += 1;
+         
+        }else {
+            $_SESSION['carrito']['productos'] [$id] = 1;
          }
-         $datos['numero'] = count($_SESSION['carrito'][' productos ']); 
+        
+         $datos['numero'] = count($_SESSION['carrito']['productos']); 
          $datos['ok'] = true;
 
     }else {

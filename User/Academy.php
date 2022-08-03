@@ -1,4 +1,7 @@
 <?php
+
+require '../config/parameters.php';
+
 $pagina_admin = 2;     
 $pagina_modificacion= 0;
 $nombre_pagina = "Home";
@@ -12,15 +15,22 @@ else {session_start ();
    # code...
 }
 
-require '../config/parameters.php';
+
 
 $nombre_pagina = "inicio";
 require_once '../includes/header.php';
 print_r($_SESSION);
 include_once '../config/ConexionDB.php';
 $productos = "SELECT * FROM cursos ";
+
+$sql = $con->prpepare("SELECT id, Nombre,Descripcion,Categoria,Costo from cursos where activo=1");
+$sql->execute();
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 //instrucciones de carrito//
-$id = isset($_GET['id']) ? $_GET['id'] : '';
+$id = isset($_GET['ID']) ? $_GET['ID'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
 if ($id == ' ' || $token == ' ' ) {
@@ -28,22 +38,24 @@ if ($id == ' ' || $token == ' ' ) {
     exit;
 }else {
 
-    $token_tmp = hash_hmac('sha1', $ID, KEY_TOKEN);
+    $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
     if ($token == $token_tmp) {
         /*direccion a base de datos */
-        $sql =$con->prepare("SELECT count(id) From cursos WHERE id=? AND activo1");
-        $sql->execute([$ID]);
+        $sql =$con->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
+        $sql->execute([$id]);
+
         if ($sql->fetchColumn() > 0) {
-            $sql =$con->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
+        
+            $sql = $con->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
             activo=1 LIMIT 1");
-            $sql->execute([$ID]);
+            $sql->execute([$id]);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             $nombre = $row['Nombre'];
-            $cate = $row['Categoria'];
+            $cate = $row['categoria'];
             $des = $row['Descripcion'];
             $cost = $row['Costo'];
-            $dir_images = 'images/courses/' . $ID .'/';
+            $dir_images = 'images/courses/' . $id .'/';
            /* imagenes */
             
            $rutaImg = $dir_images . 'Principal.png';
@@ -51,6 +63,7 @@ if ($id == ' ' || $token == ' ' ) {
             if (!file_exists($rutaImg)) {
                 $dir =dir($dir_images);
                 /** tipos de archivo img */
+                
                 while (($archivo = $dir->read()) !=false ) {
                     if ($archivo != 'principal.jpg' && (strpos($archivo,'png') || strpos ($archivo, 'jpeg'))) {
                         $imagenes[] =$dir_images . $archivo ;
@@ -98,40 +111,54 @@ if ($id == ' ' || $token == ' ' ) {
             </div>
         </div>
         <!-- ´section courses -->
-        <section class="Academy-course mt-5">
-            <div class=" mt-5">
-                <h3 class="text-center mb-4">El viaje al futuro comienza aqui </h3>
 
-                <div class="grid-container">
-                    <!-- ´card -->
-                    <?php $resultado = mysqli_query($conexion,$productos);
-                        while($row=mysqli_fetch_assoc($resultado)){
+
+        <section class="Academy-course bg-danger mt-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <?php foreach ($resultado as $row) { ?>
+
+                <div class="col">
+                    <!-- CARD -->
+                    <div class="card shadow" style="width:18rem ;">
+                    <!-- local umage -->
+                        <?php 
+                        $id =$row['id'];
+                        $imagen ="../assets/IMG/dat-courses/.$id./1.jpg";
+                        
+                        if(!file_exists($imagen))
+                            $imagen= "../assets/IMG/dat-courses/2.jpg"                        
                         ?>
-                    <div class="card-group grid-item">
-                        <div class="card m-3">
-                            <img src="https://picsum.photos/200" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h4 class="card-title text-center"><?php echo $row ["Nombre"];?></h4>
-                                <!-- ´texto -->
-                                <p class="card-text"><?php echo$row ["Descripcion"]; ?></p>
-                                <p class="card-text">Precio <span>$<?php echo $row["Costo"];?></span> Mxn</p>
-                                <p class="card-text ">Duracion <span><?php echo $row ["Duracion"]; ?></span>
-                                </p>
-                                <p class="card-text ">categoria:
-                                    <span><?php echo $row ["Categoria"]; ?></span> </p>
+                        <!-- IMG -->
+                        <img src=" <?php echo $$imagen; ?> " alt="">
+                        <!--BODY  -->
+                        <div class="card-body">
+                            <!--TITLE  -->
+                            <h4 class="card-title">
+                            <?php echo $row['Nombre']; ?>
+                            </h4>
+                            <!-- TEXT -->
+                            <p class="card-text"><?php echo $row['Descripcion']; ?></p>
+                            <!-- catego -->
+                            <p class="card-text"><?php echo $row['Categoria']; ?></p>
+                            <!-- precio -->
+                            <p class="card-text">$ <?php echo $row['Costo']; ?></p>
+                            <!-- BTN -->
+                            <div class="d-flex justify-content-between aling-items-center">
+                                <div class="btn-group">
+                                    <a href=#" class="btn btn-primary">Detalles</a>
+                                </div>
+                                <a href=#" class="btn btn-primary">Agregar Cattoto</a>
                             </div>
-                            <div class="card-footer">
-                                <!-- ´btn -->
-                                <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
-                                <button href="#" class=" btn btn-outline-primary rounded-pill-3"
-                                    type="button"
-                                    onclick="addProduct(<?php echo  $row['ID']; ?>, '<?php echo $token_tmp;  ?>' )">Agregar
-                                    carrito</button>
-                            </div>
+
+
                         </div>
+
+
                     </div>
-                    <?php  } mysqli_free_result($resultado);  ?>
                 </div>
+                <?php } ?>    
+            </div>
+
         </section>
 
     </div>

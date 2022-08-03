@@ -1,4 +1,4 @@
-function addProduct(id, token) {
+function addProducto(id, token) {
     let url = '../User/procesos/shoping.php';
     let formData = new FormData()
     formData.append('id', id)
@@ -9,6 +9,7 @@ function addProduct(id, token) {
             body: formData,
             mode: 'cors',
         }).then(response => response.json())
+        
         .then(data => {
             if (data.ok) {
                 let elemento = document.getElementById("num_cart")
