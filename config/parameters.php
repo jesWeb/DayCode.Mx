@@ -9,4 +9,7 @@ $num_cart = 0;
 if (isset ($_SESSION['carrito'][' productos '])) {
     $num_cart = count($_SESSION['carrito'][' productos ']);
 }
+$define ("base_url_admin","http://localhost/DayCode.MX/admin")
+
+
 ?>

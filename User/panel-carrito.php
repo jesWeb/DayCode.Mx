@@ -17,8 +17,6 @@ if ($_SESSION['login']==1) {
   # code...
 }
 
-// $producto  = isset($_SESSION['carrito'][' productos ']) ? $_SESSION ['carrito'][' productos '];
-
 ?>
 
 <body>

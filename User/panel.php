@@ -11,60 +11,29 @@ require_once '../includes/header.php';
 
 ?>
 
-<script type="text/javascript">
-    function confirmar() {
-        return confirm('¿Realmente estas seguro de eliminar este registro?, los datos no podran ser recuperados...');
-    }
-</script>
 
 <main>
-    <?php
-        // include("./config/conexionDB.php");
-        include("../config/conexionDB.php");
-        $sql="SELECT * FROM cliente";    
-        $resul=mysqli_query($conexion, $sql);
 
-        $sql_cur="SELECT * FROM cursos";    
-        $resul_cur=mysqli_query($conexion, $sql_cur);
-
-    ?>
-
-    <body>
-        <div class="container">
-
-            <section class="m-3">
-                <div class="row">
-                    <h1 class="h3">
-                        "Bienvenido <span class="p-1"> <?php 
-                  echo $_SESSION['nombre'].' '.$_SESSION ['apellidos']; 
-                ?> </span>"
-                    </h1>
-                    <div class="col-6"></div>
-                    <!-- row seccion cursos -->
-                    <div class="row justify-content-evenly">
-                        <div class="col-4">
-                            <h4></h4>
-                            <p></p>
-                            <a href="" class="btn  btn-primary">Continuar curso</a>
-                        </div>
-                        <div class="col-4">
-                            <h4></h4>
-                            <p></p>
-                            <a href="" class="btn  btn-primary">Continuar curso</a>
-                        </div>
-                        <div class="col-4">
-                            <h4></h4>
-                            <p></p>
-                            <a href="" class="btn  btn-primary">Continuar curso</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <?php
-            mysqli_close($conexion);
-        ?>
+<body>
+    <div class="container">
+        <div>
+            <h2>Titulo del curso</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi magnam quos nesciunt sequi illum numquam distinctio officiis optio inventore quidem. Veniam nostrum reprehenderit ipsam error, recusandae neque quasi eos omnis.</p>
         </div>
-    </body>
+        <div>
+            <h2>Titulo del curso</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi magnam quos nesciunt sequi illum numquam distinctio officiis optio inventore quidem. Veniam nostrum reprehenderit ipsam error, recusandae neque quasi eos omnis.</p>
+        </div>
+        <div>
+            <h2>Titulo del curso</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi magnam quos nesciunt sequi illum numquam distinctio officiis optio inventore quidem. Veniam nostrum reprehenderit ipsam error, recusandae neque quasi eos omnis.</p>
+        </div>
+        <div>
+            <h2>Titulo del curso</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi magnam quos nesciunt sequi illum numquam distinctio officiis optio inventore quidem. Veniam nostrum reprehenderit ipsam error, recusandae neque quasi eos omnis.</p>
+        </div>
+    </div>
+</body>
 </main>
 
 <?php 

@@ -61,7 +61,7 @@
                             <div class=" mb-4 form-floating">
                                 <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista"
                                     required>
-                                    <option value="Elige una opcion">Elige una opcion</option>
+                                    <option value="Elige una opcion">Servicio</option>
                                     <option value="1">Linea</option>
                                 </select>
                                 <label for="floatingSelect">estudiante</label>

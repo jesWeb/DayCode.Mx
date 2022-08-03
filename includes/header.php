@@ -1,11 +1,8 @@
 <?php
 
-
-
 if($pagina == 1){
   require_once 'config/parameters.php';
   require_once 'config/conexionDB.php';
-
 }elseif ($pagina_admin == 2) {
   require_once '../config/parameters.php';
   require_once '../config/conexionDB.php';
@@ -33,8 +30,6 @@ if($pagina == 1){
   <!-- css -->
   <link rel="stylesheet" href="<?= base_url?>assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?= base_url?>assets/css/styles.css" />
-  <!-- icons boostrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <!-- Modal -->
 <?php 
@@ -88,7 +83,7 @@ if($modal == 0){
     <nav class="navbar navbar-expand-md navbar-light  bg-light shadow navbar-main ">
       <div class="container-fluid">
         <!-- branding -->
-        <a href="" class="navbar-brand ">
+        <a href="<?= base_url?>index.php" class="navbar-brand ">
           <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="brand DAYCODE.mx" class=" ms-md-0">
         </a>
         <!-- btn -->
@@ -102,7 +97,21 @@ if($modal == 0){
             <!-- links -->
             <?php
               if (isset($_SESSION['login'])==1) { ?>
+                <?php
+                  if($_SESSION['idTUsuario']!=1){ ?>
+                    <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
+                    <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
+                    <a href="<?= base_url?>User/panel.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+                  <?php  
+                  }else {?>
+                    <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
+                    <a href="<?= base_url?>crud/panel_control.php" class="nav-link nav-link_n m-2">Control panel</a>
+                  <?php
+                  }
+          }
+          else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
+<<<<<<< HEAD
 
             <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
@@ -117,12 +126,15 @@ if($modal == 0){
             <a href="../layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
             <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
             <a href="../layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
+=======
+            <a href="<?= base_url?>layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="<?= base_url?>layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
+>>>>>>> fde0de91264318f3f4075374e0792e40049c556e
             <?php
             }
             ?>
 
-
-           
             <?php
            if (isset($_SESSION['login'])==1) { ?>
             <li class="nav-item dropdown m-2">
@@ -147,9 +159,6 @@ if($modal == 0){
             <?php
             }
            ?>
-
-
-
           </div>
     </nav>
   </header>

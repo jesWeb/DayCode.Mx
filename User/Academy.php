@@ -2,6 +2,7 @@
 
 require '../config/parameters.php';
 
+
 $pagina_admin = 2;     
 $pagina_modificacion= 0;
 $nombre_pagina = "Home";
@@ -17,9 +18,10 @@ else {session_start ();
 
 
 
+
 $nombre_pagina = "inicio";
 require_once '../includes/header.php';
-print_r($_SESSION);
+
 include_once '../config/ConexionDB.php';
 $productos = "SELECT * FROM cursos ";
 
@@ -82,6 +84,7 @@ if ($id == ' ' || $token == ' ' ) {
     }
 }
 
+
 ?>
 
 <body>
@@ -128,6 +131,7 @@ if ($id == ' ' || $token == ' ' ) {
                         if(!file_exists($imagen))
                             $imagen= "../assets/IMG/dat-courses/2.jpg"                        
                         ?>
+
                         <!-- IMG -->
                         <img src=" <?php echo $$imagen; ?> " alt="">
                         <!--BODY  -->
@@ -148,6 +152,25 @@ if ($id == ' ' || $token == ' ' ) {
                                     <a href=#" class="btn btn-primary">Detalles</a>
                                 </div>
                                 <a href=#" class="btn btn-primary">Agregar Cattoto</a>
+=======
+                    <div class="card-group grid-item">
+                        <div class="card m-3">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><?php echo $row ["Nombre"];?></h4>
+                                <!-- ´texto -->
+                                <p class="card-text"><?php echo$row ["Descripcion"]; ?></p>
+                                <p class="card-text">Precio <span>$<?php echo $row["Costo"];?></span> Mxn</p>
+                                <p class="card-text ">Duracion <span><?php echo $row ["Duracion"]; ?></span>
+                                </p>
+                                <p class="card-text ">categoria:
+                                    <span><?php echo $row ["Categoria"]; ?></span> </p>
+                            </div>
+                            <div class="card-footer">
+                                <!-- ´btn -->
+                                <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
+                                <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
+
                             </div>
 
 
