@@ -30,6 +30,8 @@ if($pagina == 1){
   <!-- css -->
   <link rel="stylesheet" href="<?= base_url?>assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?= base_url?>assets/css/styles.css" />
+  <!-- iconos bp -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <!-- Modal -->
 <?php 
@@ -111,8 +113,6 @@ if($modal == 0){
           }
           else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-<<<<<<< HEAD
-
             <a href="./services.html" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
             <a href="../User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2">Compras </i><span id="num_cart" class="badge ms-2 p-2 bg-danger">
@@ -121,16 +121,11 @@ if($modal == 0){
 
 
             <?php  
-          } else{?>
+          }if(isset($_SESSION['login']) == 1){?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
             <a href="../layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
             <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
             <a href="../layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
-=======
-            <a href="<?= base_url?>layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
-            <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
-            <a href="<?= base_url?>layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
->>>>>>> fde0de91264318f3f4075374e0792e40049c556e
             <?php
             }
             ?>
