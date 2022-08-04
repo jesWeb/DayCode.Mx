@@ -3,17 +3,17 @@
 require '../config/parameters.php';
 
 
-$pagina_admin = 2;     
-$pagina_modificacion= 0;
+$pagina_admin = 2;
+$pagina_modificacion = 0;
 $nombre_pagina = "Home";
-$pagina =0;
-$modal=0;
+$pagina = 0;
+$modal = 0;
 
-if (session_start ()) {
-   # code...
-}
-else {session_start ();
-   # code...
+if (session_start()) {
+    # code...
+} else {
+    session_start();
+    # code...
 }
 
 
@@ -23,32 +23,35 @@ $nombre_pagina = "inicio";
 require_once '../includes/header.php';
 
 include_once '../config/ConexionDB.php';
-$productos = "SELECT * FROM cursos ";
 
-$sql = $con->prpepare("SELECT id, Nombre,Descripcion,Categoria,Costo from cursos where activo=1");
-$sql->execute();
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+$productos = "SELECT * FROM cursos WHERE activo=1";
+$sentenciaProductos = $PDO->prepare($productos);
+$sentenciaProductos->execute();
+
+$resultado = $sentenciaProductos->fetchAll();
+
+
 
 
 
 //instrucciones de carrito//
-$id = isset($_GET['ID']) ? $_GET['ID'] : '';
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
-if ($id == ' ' || $token == ' ' ) {
+if ($id == ' ' || $token == ' ') {
     echo 'Error al procesar la pericion';
     exit;
-}else {
+} else {
 
     $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
     if ($token == $token_tmp) {
         /*direccion a base de datos */
-        $sql =$con->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
+        $sql = $con->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
         $sql->execute([$id]);
 
         if ($sql->fetchColumn() > 0) {
-        
+
             $sql = $con->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
             activo=1 LIMIT 1");
             $sql->execute([$id]);
@@ -57,29 +60,28 @@ if ($id == ' ' || $token == ' ' ) {
             $cate = $row['categoria'];
             $des = $row['Descripcion'];
             $cost = $row['Costo'];
-            $dir_images = 'images/courses/' . $id .'/';
-           /* imagenes */
-            
-           $rutaImg = $dir_images . 'Principal.png';
-            
+            $dir_images = 'images/courses/' . $id . '/';
+            /* imagenes */
+
+            $rutaImg = $dir_images . 'Principal.png';
+
             if (!file_exists($rutaImg)) {
-                $dir =dir($dir_images);
+                $dir = dir($dir_images);
                 /** tipos de archivo img */
-                
-                while (($archivo = $dir->read()) !=false ) {
-                    if ($archivo != 'principal.jpg' && (strpos($archivo,'png') || strpos ($archivo, 'jpeg'))) {
-                        $imagenes[] =$dir_images . $archivo ;
+
+                while (($archivo = $dir->read()) != false) {
+                    if ($archivo != 'principal.jpg' && (strpos($archivo, 'png') || strpos($archivo, 'jpeg'))) {
+                        $imagenes[] = $dir_images . $archivo;
                     }
                 }
                 $dir->close();
-            }
-            else {
+            } else {
                 echo 'error al procesar la peticion';
                 exit;
             }
-        }   else{
+        } else {
             echo 'error al procesar la peticion';
-                exit;
+            exit;
         }
     }
 }
@@ -114,45 +116,15 @@ if ($id == ' ' || $token == ' ' ) {
             </div>
         </div>
         <!-- ´section courses -->
+        <section class="">
+            <div class=" mt-5">
+                <h3 class="text-center mb-4">El viaje al futuro comienza aqui </h3>
 
-
-        <section class="Academy-course bg-danger mt-5">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <?php foreach ($resultado as $row) { ?>
-
-                <div class="col">
-                    <!-- CARD -->
-                    <div class="card shadow" style="width:18rem ;">
-                    <!-- local umage -->
-                        <?php 
-                        $id =$row['id'];
-                        $imagen ="../assets/IMG/dat-courses/.$id./1.jpg";
-                        
-                        if(!file_exists($imagen))
-                            $imagen= "../assets/IMG/dat-courses/2.jpg"                        
+                <div class="grid-container">
+                    <!-- ´card -->
+                    <?php $resultado = mysqli_query($conexion,$productos);
+                        while($row=mysqli_fetch_assoc($resultado)){
                         ?>
-
-                        <!-- IMG -->
-                        <img src=" <?php echo $$imagen; ?> " alt="">
-                        <!--BODY  -->
-                        <div class="card-body">
-                            <!--TITLE  -->
-                            <h4 class="card-title">
-                            <?php echo $row['Nombre']; ?>
-                            </h4>
-                            <!-- TEXT -->
-                            <p class="card-text"><?php echo $row['Descripcion']; ?></p>
-                            <!-- catego -->
-                            <p class="card-text"><?php echo $row['Categoria']; ?></p>
-                            <!-- precio -->
-                            <p class="card-text">$ <?php echo $row['Costo']; ?></p>
-                            <!-- BTN -->
-                            <div class="d-flex justify-content-between aling-items-center">
-                                <div class="btn-group">
-                                    <a href=#" class="btn btn-primary">Detalles</a>
-                                </div>
-                                <a href=#" class="btn btn-primary">Agregar Cattoto</a>
-=======
                     <div class="card-group grid-item">
                         <div class="card m-3">
                             <img src="..." class="card-img-top" alt="...">
@@ -168,25 +140,18 @@ if ($id == ' ' || $token == ' ' ) {
                             </div>
                             <div class="card-footer">
                                 <!-- ´btn -->
-                                <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
-                                <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
-
+                               
+                                <button  class="card-link btn btn-outline-primary rounded-pill-3" type="button" onclick="addproductos(<?php echo $row['ID']; ?>, '<?php echo hash_hmac('sha1', $row['ID'],KEY_TOKEN); ?>')">Agregar carrito</button>
                             </div>
-
-
                         </div>
-
-
                     </div>
+                    <?php  } mysqli_free_result($resultado);  ?>
                 </div>
-                <?php } ?>    
-            </div>
-
         </section>
 
     </div>
 </body>
-<?php 
+<?php
 
 require_once '../includes/footer.php';
 
