@@ -4,6 +4,7 @@ function addProducto(id, token) {
     formData.append('id', id)
     formData.append('token', token)
 
+
     fetch(url, {
             method: 'POST',
             body: formData,
