@@ -141,7 +141,7 @@ if ($id == ' ' || $token == ' ') {
                             <div class="card-footer">
                                 <!-- ´btn -->
                                
-                                <button  class="card-link btn btn-outline-primary rounded-pill-3" type="button" onclick="addproductos(<?php echo $row['ID']; ?>, '<?php echo hash_hmac('sha1', $row['ID'],KEY_TOKEN); ?>')">Agregar carrito</button>
+                                <button  class="card-link btn btn-outline-primary rounded-pill-3" type="button" onclick="addProducto(<?php echo $row['ID']; ?>, '<?php echo hash_hmac('sha1', $row['ID'],KEY_TOKEN); ?>')">Agregar carrito</button>
                             </div>
                         </div>
                     </div>
@@ -151,6 +151,15 @@ if ($id == ' ' || $token == ' ') {
 
     </div>
 </body>
+
+
+
+
+
+
+
+
+
 <?php
 
 require_once '../includes/footer.php';
