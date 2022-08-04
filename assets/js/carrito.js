@@ -16,5 +16,6 @@ function addProducto(id, token) {
                 let elemento = document.getElementById("num_cart")
                 elemento.innerHTML = data.numero
             }
+            window.setTimeout(function(){location.reload()},1000)
         })
 }
