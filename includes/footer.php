@@ -35,5 +35,5 @@
 <script src="<?= base_url?>assets/js/Open-modal.js"></script>
 <script src="<?= base_url?>assets/js/login.js"></script>
 <script src="<?= base_url?>assets/js/crear-cuenta.js"></script>
-
+<script src="<?= base_url?>assets/js/carrito.js"></script>
 </html>
