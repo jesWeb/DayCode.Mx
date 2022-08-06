@@ -30,7 +30,7 @@ require_once '../includes/header.php';
 
 <body>
     <div class="container">
-        <h1 class="display-4 text-center">Lista de Clientes</h1>
+        <h1 class="display-4 text-center">Gestión de usuarios y cursos</h1>
         <!-- BTN para agregar un nuevo cliente a la tabla "CLIENTES" -->
 
         <div class="row align-items-center">
