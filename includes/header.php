@@ -110,7 +110,7 @@ if($modal == 0){
             <?php if($_SESSION['idTUsuario']=='User'){ ?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
             <a href="<?= base_url?>User/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
-            <a href="<?= base_url?>layout/Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+            <a href="<?= base_url?>User/panel.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
             <a href="<?= base_url?>User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2">Compras
               </i><span id="num_cart" class="badge ms-2 p-2 bg-danger">
 
