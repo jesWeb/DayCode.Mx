@@ -13,9 +13,9 @@ function addProducto(id, token) {
         
         .then(data => {
             if (data.ok) {
-                let elemento = document.getElementById("num_cart")
-                elemento.innerHTML = data.numero
+                let elemento = document.getElementById('num_cart')
+                elemento.innerHTML = data.cantidad
             }
-            window.setTimeout(function(){location.reload()},1000)
+            // window.setTimeout(function(){location.reload()},1000)
         })
 }

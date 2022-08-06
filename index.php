@@ -15,7 +15,7 @@ else {session_start ();
  $nombre_pagina = "Home";
  $pagina =1;
  $modal = 1;
-require_once 'includes/header.php';
+require_once 'includes/header-index.php';
 
 ?>
 

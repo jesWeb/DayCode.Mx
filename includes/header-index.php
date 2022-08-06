@@ -20,8 +20,8 @@ if($pagina == 1){
 
 //validacion de badge
 $num_cart = 0;
-if (isset ($_SESSION['carrito'])) {
-   $num_cart = count($_SESSION['carrito']);
+if (isset ($_SESSION['carrito']['productos'])) {
+   $num_cart = count($_SESSION['carrito']['productos']);
 }
 
 ?>
@@ -35,8 +35,8 @@ if (isset ($_SESSION['carrito'])) {
   <title>DayCode.MX</title>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- css -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- iconos bp -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
@@ -108,10 +108,10 @@ if($modal == 0){
               if (1 == isset($_SESSION['login'])) { ?>
 
             <?php if(1 == $_SESSION['idTUsuario']){ ?>
-            <a href="../index.php" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="../User/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
-            <a href="../User/panel.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
-            <a href="../User/panel-carrito.php" class="nav-link m-2"><i class="bi bi-cart2">Compras
+            <a href="index.php" class="nav-link nav-link_n active m-2">Home</a>
+            <a href="User/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
+            <a href="User/panel.php" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
+            <a href="User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2">Compras
               </i><span id="num_cart" class="badge ms-2 p-2 bg-danger">
 
                 <?php echo $num_cart;?>
@@ -119,7 +119,7 @@ if($modal == 0){
 
             <?php
               }else if($_SESSION['idTUsuario']=='Admin'){ ?>
-            <a href="" class="nav-link nav-link_n active m-2">Home</a>
+            <a href="index.php" class="nav-link nav-link_n active m-2">Home</a>
             <a href="crud/panel_control.php" class="nav-link nav-link_n m-2">Panel de control</a>
 
             <?php } ?>
@@ -128,15 +128,15 @@ if($modal == 0){
           }
           else{?>
             <a href="../index.php" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="services.php" class="nav-link nav-link_n m-2">Servicios</a>
-            <a href="Academy.php" class="nav-link nav-link_n m-2">Academy</a>
-            <a href="coments.php" class="nav-link nav-link_n m-2">Contacto</a>
+            <a href="layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
 
 
             <?php  
           }
                       
-           if (1 == isset($_SESSION['login'])) { ?>
+           if (isset($_SESSION['login'])==1) { ?>
             <li class="nav-item dropdown m-2">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -154,7 +154,7 @@ if($modal == 0){
             <?php
           }else {  ?>
 
-            <a href="../User/login.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar
+            <a href="User/login.php" class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar
               sesion</a>
             <a href="User/registro.php"
               class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</a>

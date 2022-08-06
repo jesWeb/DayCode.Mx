@@ -18,21 +18,14 @@ if ($_SESSION['login'] == 1) {
   # code...
 }
 
+// print_r($_SESSION['carrito']);
 
-$Producto = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['productos'] : null;
+$ids_cursos = isset($_SESSION['carrito']) && is_array($_SESSION['carrito']) ? array_keys($_SESSION['carrito']) : [0];
 
-//arreglo de lista///
-$lista_shop = array();
-
-//VALIDACION DE PRODUCTO //
-if ($Producto != null) {
-  foreach ($Producto as $clave => $cantidad);
-   $productos = $PDO->prepare("SELECT id,Nombre,categoria,Descripcion, Costo,$cantidad as cantidad from cursos where id=? AND activo=1");
-   $productos->execute([$clave]);
-   $lista_shop[] = $productos->fetch(PDO::FETCH_ASSOC);
-}
-
-
+$sql = 'select id, nombre, categoria, descripcion, costo from cursos where id in(' . implode(',', $ids_cursos) . ')';
+$stmt = $PDO->prepare($sql);
+$stmt->execute();
+$cursos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <body>
@@ -50,35 +43,28 @@ if ($Producto != null) {
         </thead>
 
         <tbody>
-          <?php if ($lista_shop == null) {
+          <?php if (0 == count($cursos)) {
             echo '<tr> <td colaspan="5" class="text-center"><b>Tu lista esta vacia </b></td> </tr>';
           } else {
             $total = 0;
-            foreach ($lista_shop as $Producto) {
-              $_id = $Producto['id'];
-              $name = $Producto['Nombre'];
-              $cat = $Producto['categoria'];
-              $precio = $Producto['Costo'];
-              $cantidad = $Producto['cantidad'];
-              $subtotal = $cantidad * $precio;
+            $subtotal = 0;
+            foreach ($cursos as $curso) {
+              $subtotal = $_SESSION['carrito'][$curso['id']] * $curso['costo'];
               $total += $subtotal;
-
-              print_r($lista_shop);
-              // print_r($Producto);
           ?>
 
               <tr>
 
-                <td><?php echo $name ?></td>
-                <td><?php echo $cat ?></td>
-                <td><?php echo MONEDA . number_format($precio, 2, '.', '.'); ?></td>
-
-                <div class="" id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
-                  <?php echo MONEDA . number_format($subtotal, 2, '.', '.',); ?>
-                </div>
+                <td><?php echo htmlentities($curso['nombre']) ?></td>
+                <td><?php echo htmlentities($curso['categoria']) ?></td>
+                <td><?php echo MONEDA . number_format($curso['costo'], 2, '.', '.'); ?></td>
+                <td>
+                  <div class="" id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
+                    <?php echo MONEDA . number_format($subtotal, 2, '.', '.',); ?>
+                  </div>
                 </td>
 
-                <td><a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toogle="modal" data-bs-target="eliminaModal">Eliminar</a></td>
+                <td><a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $curso['id']; ?>" data-bs-toogle="modal" data-bs-target="eliminaModal">Eliminar</a></td>
 
               </tr>
             <?php  } ?>

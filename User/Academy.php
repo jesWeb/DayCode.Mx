@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+
 
 require '../config/parameters.php';
 
@@ -11,6 +13,7 @@ $modal = 0;
 
 if (session_start()) {
     # code...
+    // unset($_SESSION['carrito']);
 } else {
     session_start();
     # code...

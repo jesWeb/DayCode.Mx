@@ -44,7 +44,7 @@ formulario_logeo.addEventListener("submit", function (e) {
           if (result.dismiss === Swal.DismissReason.timer) {
             console.log("I was closed by the timer");
             window.location.href =
-              "http://localhost/DayCode.Mx/index.php";
+              '/index.php';
           }
         });
       }

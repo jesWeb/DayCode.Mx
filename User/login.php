@@ -29,7 +29,7 @@
                 <!-- title -->
                 <h2 class="fw-bl text-center pt-4 mb-4">Iniciar Seción</h2>
                 <!-- form -->
-                <form id="formulario-login">
+                <form action="login.php" id="formulario-login">
 
                     <div class="mb-4">
                         <label for="email" class="form-label"> Correo Electronico</label>
@@ -39,7 +39,7 @@
 
                     <div class="mb-4">
                         <label for="password">Contraseña</label>
-                        <input type="password" name="contraseña" class="form-control"
+                        <input type="password" name="contrasena" class="form-control"
                             placeholder="Escribe tu contraseña" required id="">
                     </div>
 
