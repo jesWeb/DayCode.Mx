@@ -19,7 +19,7 @@ require_once '../includes/header.php';
             $ape_a_i=$_POST['ape_a_f'];
             $ape_b_i=$_POST['ape_b_f'];
             $fechaN_i=$_POST['fechaN_f'];
-            $idUser_i=$_POST['idU_f'];
+            $idUser_i=$_POST['opc'];
             $email_i=$_POST['email_f'];
             $telefono_i=$_POST['tele_f'];
             $idServ_i=$_POST['IdS_f'];
@@ -60,8 +60,11 @@ require_once '../includes/header.php';
             <input type="text" name="ape_b_f" id="" placeholder="Segundo apellido">
             <label for="fechaN">Fecha</label>
             <input type="date" name="fechaN_f" id="fechaN">
-            <label for="IdUser">Id de Usuario</label>
-            <input type="number" name="idU_f" id="">
+            <select name="opc" id="" class="selec-sex">
+                <option value="0" selected>Selecciona el tipo de servicio:</option>
+                <option value="Admin">Administrador</option>
+                <option value="User">Usuario</option>
+            </select>
             <input type="email" name="email_f" id="" placeholder="email@gamil.com">
             <input type="tel" name="tele_f" id="" placeholder="7200000000">
             <label for="IdSer">Id de Servicio</label>

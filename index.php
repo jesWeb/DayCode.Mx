@@ -39,7 +39,7 @@ require_once 'includes/header.php';
         </div>
         <!--  -->
         <div class="col">
-          <p><span class="h3">DayCode.mx </span> Es una agencia digital mexicana especializada en IT.
+          <p><span class="h3">DayCode.mx -subir-</span> Es una agencia digital mexicana especializada en IT.
             <br>Conocemos a
             nuestras audiencias de principio a fin, Esto nos permite desarrollar posibilidades en el
             ámbito

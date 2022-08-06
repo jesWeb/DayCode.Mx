@@ -36,7 +36,7 @@ require_once '../includes/header.php';
         <div class="row align-items-center">
           <div class="col">
             <a href="../crud/insert_c.php">
-                <button type="button" class="btn btn-outline-dark" href="">Agregar cliente</button>
+                <button type="button" class="btn btn-outline-dark" href="">Agregar usuario</button>
             </a>
           </div>
         </div>
@@ -46,18 +46,13 @@ require_once '../includes/header.php';
             <table class="table table-dark table-sm">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Primer Apellido</th>
                         <th>Segundo Apellido</th>
-                        <th>Fecha de nacimiento</th>
-                        <th>ID de Usuario</th>
+                        <th>Rol</th>
                         <th>Correo electrónico</th>
                         <th>Teléfono</th>
-                        <th>ID de Servicio</th>
                         <th>Estatus</th>
-                        <th>Sexo</th>
-                        <th>Contraseña</th>
                         <th>Fecha de registro</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -71,18 +66,13 @@ require_once '../includes/header.php';
                         while($filas=mysqli_fetch_assoc($resul)){
                     ?>
                     <tr>
-                        <td> <?php echo $filas['idCliente'] ?> </td>
                         <td> <?php echo $filas['nombre'] ?> </td>
                         <td> <?php echo $filas['apellido_a'] ?> </td>
                         <td> <?php echo $filas['apellido_b'] ?> </td>
-                        <td> <?php echo $filas['fechaNac'] ?> </td>
                         <td> <?php echo $filas['idTUsuario'] ?> </td>
                         <td> <?php echo $filas['email'] ?> </td>
                         <td> <?php echo $filas['telefono'] ?> </td>
-                        <td> <?php echo $filas['idServicio'] ?> </td>
                         <td> <?php echo $filas['Estatus'] ?> </td>
-                        <td> <?php echo $filas['Sexo'] ?> </td>
-                        <td> <?php echo $filas['Contra'] ?> </td>
                         <td> <?php echo $filas['dateCreacion'] ?> </td>
                         <td>
                             <?php echo "<a href='../crud/edit_c.php?idCliente=".$filas['idCliente']."'>EDITAR</a>"; ?>
@@ -112,7 +102,6 @@ require_once '../includes/header.php';
             <table class="table table-dark table-sm">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Categoria</th>
                         <th>Duracion</th>
@@ -128,7 +117,6 @@ require_once '../includes/header.php';
                         while($filas_cur=mysqli_fetch_assoc($resul_cur)){
                     ?>
                     <tr>
-                        <td> <?php echo $filas_cur['ID'] ?> </td>
                         <td> <?php echo $filas_cur['Nombre'] ?> </td>
                         <td> <?php echo $filas_cur['Categoria'] ?> </td>
                         <td> <?php echo $filas_cur['Duracion'] ?> </td>
