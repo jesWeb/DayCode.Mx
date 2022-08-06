@@ -19,6 +19,38 @@ require_once 'includes/header.php';
 
 ?>
 
+<?php
+        if(isset($_POST['subir'])){
+            //ANTES DE ESTO DEBERIA IR UNA VALIDACION 
+            $nombre_i=$_POST['nombre_f'];
+            $ape_a_i=$_POST['ape_a_f'];
+            $ape_b_i=$_POST['ape_b_f'];
+            $email_i=$_POST['email_f'];
+            $idServ_i=$_POST['IdS_f'];
+            $mensa_i=$_POST['mensa_f'];
+
+            include("config/conexionDB.php");
+
+            $sql_id="INSERT INTO cliente(nombre, apellido_a, apellido_b, email, idServicio, mensaje) VALUES ('".$nombre_i."','".$ape_a_i."','".$ape_b_i."','".$email_i."','".$idServ_i."', '".$mensa_i."')";
+
+            $resultado_id=mysqli_query($conexion, $sql_id);
+
+            if($resultado_id){
+                echo "<script language='JavaScript'>
+                    alert('Los datos fueron insertados');
+                    location.assign('index.php');
+                </script>";
+            }else{
+                echo "<script language='JavaScript'>
+                    alert('ERROR');
+                </script>";
+            }
+            mysqli_close($conexion);
+
+        }else{
+        }
+    ?>
+
 <!-- Main -->
 <main>
 
@@ -462,63 +494,51 @@ require_once 'includes/header.php';
         <!--formulario  -->
         <section class="mt-5">
           <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
-          <!-- form -->
-          <form method="post" class="row g-3 mt-3 justify-content-center" id=""
+                    <!-- form -->
+                    <form method="post" class="row g-3 mt-3 justify-content-center" id=""
             action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
             <!--name  -->
             <div class="col-6">
               <label for="" class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="Nombre" id="" placeholder="@Jose Alberto" minlength="4"
+              <input type="text" class="form-control" name="nombre_f" id="" placeholder="@Jose Alberto" minlength="4"
                 maxlength="20" pattern="[a-zA-Z ]{4,20}" required>
             </div>
             <!--first-name -->
             <div class="col-6">
               <label for="" class="form-label">Primer apellido</label>
-              <input type="text" class="form-control" name="Apellido_a" id="" placeholder="@Torres" minlength="4"
+              <input type="text" class="form-control" name="ape_a_f" id="" placeholder="@Torres" minlength="4"
                 maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
             </div>
             <!--second-name  -->
             <div class="col-6">
               <label for="" class="form-label">Segundo apellido</label>
-              <input type="text" class="form-control" name="Apellido_b" id="" placeholder="@Hernandez" minlength="4"
+              <input type="text" class="form-control" name="ape_b_f" id="" placeholder="@Hernandez" minlength="4"
                 maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
-            </div>
-            <!--contact-->
-            <div class="col-6">
-              <label for="" class="form-label">Telefono</label>
-              <input type="tel" name="Telefono" class="form-control" id="" placeholder="@7223552380" minlength="10"
-                maxlength="10" required pattern="[0-9]+">
-            </div>
-            <!-- Name enterprice -->
-            <div class="col-6 col-md-6">
-              <label for="" class="form-label">Nombre de tu empresa</label>
-              <input type="text" class="form-control" name="Empresa" id="" placeholder="Industrias STARK" minlength="3"
-                maxlength="20" pattern="[a-zA-Z ]{3,20}" required>
             </div>
             <!-- email -->
             <div class="col-6 col-md-6">
               <label for="" class="form-label">Email</label>
-              <input type="email" class="form-control" name="Email" id="" placeholder="rafa@gmail.com" minlength="12"
+              <input type="email" class="form-control" name="email_f" id="" placeholder="rafa@gmail.com" minlength="12"
                 maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required value="<?php 
                   if(isset($email)) echo $email
               ?>">
             </div>
             <!-- services opcion -->
             <div class="col-12 mt-4 form-floating">
-              <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista" required>
+              <select class="form-select" id="floatingSelect" aria-label="Servicios" name="IdS_f" required>
                 <option value="Elige una opcion">Elige una opcion</option>
-                <option value="Desarrollo Web">Desarrollo Web</option>
-                <option value="Desarrollo de Software">Desarrollo de Software</option>
-                <option value="Capacitación empresarial">Capacitación empresarial</option>
-                <option value="Gestión de Base de Datos">Gestión de Base de Datos</option>
-                <option value="SEO">SEO</option>
-                <option value="Cursos">Cursos</option>
+                <option value="1">Desarrollo Web</option>
+                <option value="2">Desarrollo de Software</option>
+                <option value="3">Capacitación empresarial</option>
+                <option value="4">Gestión de Base de Datos</option>
+                <option value="5">SEO</option>
+                <option value="6">Cursos</option>
               </select>
               <label for="floatingSelect">Indica el servicio de interes</label>
             </div>
             <!-- message -->
             <div class="form-floating col-12 ">
-              <textarea class="form-control" name="Area" placeholder="Mi @empresa es...." id="floatingTextarea"
+              <textarea class="form-control" name="mensa_f" placeholder="Mensaje: " id="floatingTextarea"
                 minlength="20" maxlength="150" pattern="[a-zA-Z ]{20,800}"></textarea>
               <label for="floatingTextarea">Tu esmpresa es:</label>
             </div>
