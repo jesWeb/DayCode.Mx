@@ -17,8 +17,6 @@ if (session_start()) {
 }
 
 
-
-
 $nombre_pagina = "inicio";
 require_once '../includes/header.php';
 
@@ -29,10 +27,6 @@ $sentenciaProductos = $PDO->prepare($productos);
 $sentenciaProductos->execute();
 
 $resultado = $sentenciaProductos->fetchAll();
-
-
-
-
 
 //instrucciones de carrito//
 $id = isset($_GET['id']) ? $_GET['id'] : '';
@@ -47,12 +41,12 @@ if ($id == ' ' || $token == ' ') {
 
     if ($token == $token_tmp) {
         /*direccion a base de datos */
-        $sql = $con->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
+        $sql = $conexion->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
         $sql->execute([$id]);
 
         if ($sql->fetchColumn() > 0) {
 
-            $sql = $con->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
+            $sql = $conexion->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
             activo=1 LIMIT 1");
             $sql->execute([$id]);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
@@ -151,14 +145,6 @@ if ($id == ' ' || $token == ' ') {
 
     </div>
 </body>
-
-
-
-
-
-
-
-
 
 <?php
 

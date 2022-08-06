@@ -458,7 +458,78 @@ require_once 'includes/header.php';
           <a href="<?= base_url?>layout/coments.php" class="btn btn-primary">Compartir Experiencia</a>
         </div>
       </section>
-      
+      <section>
+        <!--formulario  -->
+        <section class="mt-5">
+          <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
+          <!-- form -->
+          <form method="post" class="row g-3 mt-3 justify-content-center" id=""
+            action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+            <!--name  -->
+            <div class="col-6">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text" class="form-control" name="Nombre" id="" placeholder="@Jose Alberto" minlength="4"
+                maxlength="20" pattern="[a-zA-Z ]{4,20}" required>
+            </div>
+            <!--first-name -->
+            <div class="col-6">
+              <label for="" class="form-label">Primer apellido</label>
+              <input type="text" class="form-control" name="Apellido_a" id="" placeholder="@Torres" minlength="4"
+                maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+            </div>
+            <!--second-name  -->
+            <div class="col-6">
+              <label for="" class="form-label">Segundo apellido</label>
+              <input type="text" class="form-control" name="Apellido_b" id="" placeholder="@Hernandez" minlength="4"
+                maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+            </div>
+            <!--contact-->
+            <div class="col-6">
+              <label for="" class="form-label">Telefono</label>
+              <input type="tel" name="Telefono" class="form-control" id="" placeholder="@7223552380" minlength="10"
+                maxlength="10" required pattern="[0-9]+">
+            </div>
+            <!-- Name enterprice -->
+            <div class="col-6 col-md-6">
+              <label for="" class="form-label">Nombre de tu empresa</label>
+              <input type="text" class="form-control" name="Empresa" id="" placeholder="Industrias STARK" minlength="3"
+                maxlength="20" pattern="[a-zA-Z ]{3,20}" required>
+            </div>
+            <!-- email -->
+            <div class="col-6 col-md-6">
+              <label for="" class="form-label">Email</label>
+              <input type="email" class="form-control" name="Email" id="" placeholder="rafa@gmail.com" minlength="12"
+                maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required value="<?php 
+                  if(isset($email)) echo $email
+              ?>">
+            </div>
+            <!-- services opcion -->
+            <div class="col-12 mt-4 form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista" required>
+                <option value="Elige una opcion">Elige una opcion</option>
+                <option value="Desarrollo Web">Desarrollo Web</option>
+                <option value="Desarrollo de Software">Desarrollo de Software</option>
+                <option value="Capacitación empresarial">Capacitación empresarial</option>
+                <option value="Gestión de Base de Datos">Gestión de Base de Datos</option>
+                <option value="SEO">SEO</option>
+                <option value="Cursos">Cursos</option>
+              </select>
+              <label for="floatingSelect">Indica el servicio de interes</label>
+            </div>
+            <!-- message -->
+            <div class="form-floating col-12 ">
+              <textarea class="form-control" name="Area" placeholder="Mi @empresa es...." id="floatingTextarea"
+                minlength="20" maxlength="150" pattern="[a-zA-Z ]{20,800}"></textarea>
+              <label for="floatingTextarea">Tu esmpresa es:</label>
+            </div>
+            <!-- btn-form -->
+            <div class="mb-3 text-center ">
+              <input type="submit" name="subir" class="btn btn-primary rounded-2 col-4">
+              <!-- <a href="" type="submit" class="btn btn-primary rounded-2 col-4">Enviar</a> -->
+            </div>
+          </form>
+        </section>
+      </section>
     </div>
   </body>
 </main>

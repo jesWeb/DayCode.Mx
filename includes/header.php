@@ -93,7 +93,7 @@ if($modal == 0){
       <div class="container-fluid">
         <!-- branding -->
         <a href="<?= base_url?>index.php" class="navbar-brand ">
-          <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="brand DAYCODE.mx" class=" ms-md-0">
+          <img src="<?= base_url?>assets/IMG/DAYCODE-nav.png" alt="DAYCODE.mx" class=" ms-md-0">
         </a>
         <!-- btn -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -109,8 +109,9 @@ if($modal == 0){
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
             <a href="<?= base_url?>User/Academy.php" class="nav-link nav-link_n m-2">Cursos</a>
             <a href="./Academy.html" class="nav-link nav-link_n m-2">Mi Aprendisaje</a>
-            <a href="../User/procesos/shoping.php" class="nav-link m-2"><i class="bi bi-cart2">Compras </i><span
-                id="num_cart" class="badge ms-2 p-2 bg-danger">
+            <a href="<?= base_url?>User/panel-carrito.php " class="nav-link m-2"><i class="bi bi-cart2">Compras
+              <!--../User/procesos/shoping.php  -->
+          </i><span id="num_cart" class="badge ms-2 p-2 bg-danger">
                 <?php echo $num_cart;?>
               </span></a>
             <?php
