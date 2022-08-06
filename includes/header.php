@@ -135,9 +135,9 @@ if($modal == 0){
           }
           else{?>
             <a href="<?= base_url?>" class="nav-link nav-link_n active m-2">Home</a>
-            <a href="../layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
-            <a href="../layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
-            <a href="../layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
+            <a href="<?= base_url?>layout/services.php" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="<?= base_url?>layout/Academy.php" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="<?= base_url?>layout/coments.php" class="nav-link nav-link_n m-2">Contacto</a>
 
 
             <?php  
