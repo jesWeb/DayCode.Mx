@@ -215,7 +215,7 @@ require_once 'includes/header.php';
               <p class="">Vive como si fueses a morir mañana. <br> Aprende como si fueses a vivir para
                 siempre.</p>
               <!-- btn -->
-              <a href="" class="btn btn-primary "> Aprende ahora</a>
+              <a href="<?= base_url?>layout/Academy.php" class="btn btn-primary "> Aprende ahora</a>
             </div>
           </div>
           <!-- Img -->
