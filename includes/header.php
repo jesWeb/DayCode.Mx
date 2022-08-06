@@ -35,8 +35,8 @@ if (isset ($_SESSION['carrito']['productos'])) {
   <title>DayCode.MX</title>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- css -->
-  <link rel="stylesheet" href="<?= base_url?>assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="<?= base_url?>assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <!-- iconos bp -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
