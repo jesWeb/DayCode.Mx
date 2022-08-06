@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+session_start();
+     $pagina_admin = 2;     
+     $pagina_modificacion= 0;
+     $nombre_pagina = "Home";
+     $pagina =0;
+     $modal=0;
 
-</head>
+require_once '../includes/header.php';
 
+?>
+
+<main>
 <body>
     <section class="">
         <!-- video en presentacion o pantalla para el curso -->
@@ -116,5 +118,8 @@
     </section>
 
 </body>
-<script src="./js/bootstrap.bundle.min.js"></script>
-</html>
+</main>
+
+<?php 
+require_once '../includes/footer.php';
+?>
