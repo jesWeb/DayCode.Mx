@@ -6,7 +6,10 @@ session_start();
      $nombre_pagina = "Home";
      $pagina =0;
      $modal=0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
 require_once '../includes/header.php';
 
 ?>
@@ -31,13 +34,21 @@ require_once '../includes/header.php';
 
 <body>
     <div class="container">
+<<<<<<< HEAD
         <h1 class="display-4 text-center">Lista de Clientes</h1>
+=======
+        <h1 class="display-4 text-center">Gestión de usuarios y cursos</h1>
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
         <!-- BTN para agregar un nuevo cliente a la tabla "CLIENTES" -->
 
         <div class="row align-items-center">
           <div class="col">
             <a href="../crud/insert_c.php">
+<<<<<<< HEAD
                 <button type="button" class="btn btn-outline-dark" href="">Agregar cliente</button>
+=======
+                <button type="button" class="btn btn-outline-dark" href="">Agregar usuario</button>
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
             </a>
           </div>
         </div>
@@ -47,6 +58,7 @@ require_once '../includes/header.php';
             <table class="table table-dark table-sm">
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Primer Apellido</th>
@@ -59,6 +71,15 @@ require_once '../includes/header.php';
                         <th>Estatus</th>
                         <th>Sexo</th>
                         <th>Contraseña</th>
+=======
+                        <th>Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Rol</th>
+                        <th>Correo electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Estatus</th>
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
                         <th>Fecha de registro</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -72,6 +93,7 @@ require_once '../includes/header.php';
                         while($filas=mysqli_fetch_assoc($resul)){
                     ?>
                     <tr>
+<<<<<<< HEAD
                         <td> <?php echo $filas['idCliente'] ?> </td>
                         <td> <?php echo $filas['nombre'] ?> </td>
                         <td> <?php echo $filas['apellido_a'] ?> </td>
@@ -84,6 +106,15 @@ require_once '../includes/header.php';
                         <td> <?php echo $filas['Estatus'] ?> </td>
                         <td> <?php echo $filas['Sexo'] ?> </td>
                         <td> <?php echo $filas['Contra'] ?> </td>
+=======
+                        <td> <?php echo $filas['nombre'] ?> </td>
+                        <td> <?php echo $filas['apellido_a'] ?> </td>
+                        <td> <?php echo $filas['apellido_b'] ?> </td>
+                        <td> <?php echo $filas['idTUsuario'] ?> </td>
+                        <td> <?php echo $filas['email'] ?> </td>
+                        <td> <?php echo $filas['telefono'] ?> </td>
+                        <td> <?php echo $filas['Estatus'] ?> </td>
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
                         <td> <?php echo $filas['dateCreacion'] ?> </td>
                         <td>
                             <?php echo "<a href='../crud/edit_c.php?idCliente=".$filas['idCliente']."'>EDITAR</a>"; ?>
@@ -113,7 +144,10 @@ require_once '../includes/header.php';
             <table class="table table-dark table-sm">
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th>ID</th>
+=======
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
                         <th>Nombre</th>
                         <th>Categoria</th>
                         <th>Duracion</th>
@@ -129,7 +163,10 @@ require_once '../includes/header.php';
                         while($filas_cur=mysqli_fetch_assoc($resul_cur)){
                     ?>
                     <tr>
+<<<<<<< HEAD
                         <td> <?php echo $filas_cur['ID'] ?> </td>
+=======
+>>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
                         <td> <?php echo $filas_cur['Nombre'] ?> </td>
                         <td> <?php echo $filas_cur['Categoria'] ?> </td>
                         <td> <?php echo $filas_cur['Duracion'] ?> </td>

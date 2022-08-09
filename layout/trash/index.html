@@ -1,65 +1,86 @@
-<!-- soy un comentario -->
-<?php
-
-
-if (session_start ()) {
-    # code...
-}
-else {session_start ();
-    # code...
-}
-
- $nombre_pagina = "inicio";
- $pagina_admin = 0;     
- $pagina_modificacion= 0;
- $nombre_pagina = "Home";
- $pagina =1;
- $modal = 1;
-require_once 'includes/header-index.php';
-
-?>
-
-<?php
-        if(isset($_POST['subir'])){
-            //ANTES DE ESTO DEBERIA IR UNA VALIDACION 
-            $nombre_i=$_POST['nombre_f'];
-            $ape_a_i=$_POST['ape_a_f'];
-            $ape_b_i=$_POST['ape_b_f'];
-            $email_i=$_POST['email_f'];
-            $idServ_i=$_POST['IdS_f'];
-            $mensa_i=$_POST['mensa_f'];
-
-            include("config/conexionDB.php");
-
-            $sql_id="INSERT INTO cliente(nombre, apellido_a, apellido_b, email, idServicio, mensaje) VALUES ('".$nombre_i."','".$ape_a_i."','".$ape_b_i."','".$email_i."','".$idServ_i."', '".$mensa_i."')";
-
-            $resultado_id=mysqli_query($conexion, $sql_id);
-
-            if($resultado_id){
-                echo "<script language='JavaScript'>
-                    alert('Los datos fueron insertados');
-                    location.assign('index.php');
-                </script>";
-            }else{
-                echo "<script language='JavaScript'>
-                    alert('ERROR');
-                </script>";
-            }
-            mysqli_close($conexion);
-
-        }else{
-        }
-    ?>
-
+<!DOCTYPE html>
+<html lang="es-Mx">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DayCode.MX</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">¡Rebajas en agradecimiento a tu preferencia!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <div class="modal-body">
+                <p class="txt-anuncio">
+                  Descuentos especiales para ti furuto programador. Consigue un 15 % de descuento sobre el precio de
+                  nuestros cursos. <br> Si, asi como lo escuchaste... ¡En todos nuestros cursos!
+                </p>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Modal body with image -->
+              <div class="modal-body">
+                <img src="./IMG/img_modal.png" class="shadow-img img-styles" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quizá luego...</button>
+        <a href="./create-Account.html" type="button"   class="btn btn-primary">Obtener descuento</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- navbar -->
+<div>
+  <header class="">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow navbar-main ">
+      <div class="container-fluid">
+        <!-- branding -->
+        <a href="" class="navbar-brand ">
+          <img src="./IMG/DAYCODE-nav.png" alt="brand DAYCODE.mx" class=" ms-md-0">
+        </a>
+        <!-- btn -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- items -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <div class="nav ms-auto ">
+            <!-- links -->
+            <a href="index.html" class="nav-link nav-link_n active m-2">Home</a>
+            <a href="./services.html" class="nav-link nav-link_n m-2">Servicios</a>
+            <a href="./Academy.html" class="nav-link nav-link_n m-2">Academy</a>
+            <a href="" class="nav-link nav-link_n m-2">Contacto</a>
+            <button class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn">Iniciar sesion</button>
+            <button class="nav-link btn  m-2 d-grid-md-2 mt-md-2 nav-link_btn-up">Crear cuenta</button>
+          </div>
+    </nav>
+  </header>
+</div>
 <!-- Main -->
 <main>
-
   <body>
     <!-- img-prom -->
     <div class="prom container mb-5">
       <!-- img -->
       <div class="prom-img">
-        <img src="./assets/IMG/hader.png" class="img-fluid" alt="">
+        <img src="./IMG/prueba.png" class="img-fluid" alt="">
       </div>
     </div>
     <div class="container">
@@ -67,15 +88,11 @@ require_once 'includes/header-index.php';
       <div class="row bg-light mb-4">
         <!--  -->
         <div class="col">
-          <img src="./assets/IMG/DAYCODE-logo.png" class=" mt-3 img-fluid" alt="">
+          <img src="./IMG/DAYCODE-logo.png" class=" mt-3 img-fluid" alt="">
         </div>
         <!--  -->
         <div class="col">
-<<<<<<< HEAD
-          <p><span class="h3">DayCode.mx</span> Es una agencia digital mexicana especializada en IT.
-=======
-          <p><span class="h3">DayCode.mx -subir-</span> Es una agencia digital mexicana especializada en IT.
->>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
+          <p><span class="h3">DayCode.mx</span> es una agencia digital mexicana especializada en IT.
             <br>Conocemos a
             nuestras audiencias de principio a fin, Esto nos permite desarrollar posibilidades en el
             ámbito
@@ -87,12 +104,8 @@ require_once 'includes/header-index.php';
       <section class="mb-5 mt-4 ">
         <div class=" mb-5">
           <div class="col-7">
-            <h3>El crecimiento de tu negocio nuestro principal objetivo.</h3>
-            <p>DAYCODE México proporciona servicios de Desarrollo Web, Publicidad y Desarrollo
-              de Software a propietarios de pequeñas y medianas empresas, asi como a
-              proveedores que desean hacer crecer su negocio. Con nuestros servicios de su
-              negocio tendrá un lugar asegurado en la página principal de resultados de los
-              más importantes buscadores de internet</p>
+            <h3>titulo</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla odit ipsa officia qui vero a ut quisquam ex tenetur enim iste consequuntur, quasi et nemo possimus doloremque ducimus earum sed explicabo eveniet eaque! Obcaecati blanditiis esse, nam itaque illum magnam reprehenderit. Assumenda eaque sapiente maxime explicabo libero nulla odit earum.</p>
           </div>
         </div>
         <!--cards-->
@@ -101,14 +114,11 @@ require_once 'includes/header-index.php';
             <div class="col">
               <div class="card border-0">
                 <div class=" text-center p-3">
-                  <img src="./assets/IMG/card-java.jpg" class="card-img-top" alt="">
+                  <img src="./IMG/icons/SEO-icon.svg" alt="">
                 </div>
                 <div class="card-body text-center">
-                  <h3 class="card-titulo">Desarrollo Web</h3>
-                  <p class="card-text">¿Necesitas un sitio web que te otorgue presencia digital? O quizá estas
-                    emprendiendo un nuevo negocio y requieres de una tienda online. Sea cual sea tu objetivo al tener
-                    presencia digital, acércate con nosotros para recibir asesoría gratuita, y de esta forma, puedas
-                    decidir qué tipo de sitio web necesitas. </p>
+                  <h3 class="card-titulo">seo</h3>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
                 </div>
 
               </div>
@@ -116,15 +126,11 @@ require_once 'includes/header-index.php';
             <div class="col">
               <div class="card border-0">
                 <div class=" text-center p-3">
-                  <img src="./assets/IMG/card-web-1.jpg" class="card-img-top" alt="">
+                  <img src="./IMG/icons/web-icon.svg" alt="">
                 </div>
                 <div class="card-body text-center">
-                  <h3 class="card-titulo">Desarrollo de Software</h3>
-                  <p class="card-text">¿Manejar tus pedidos y el inventario de tu negocio es algo sumamente complicada
-                    verdad? No sigas utilizando papel y lápiz, la mejor opción sería tomar utilizar herramientas
-                    tecnologías enfocadas exclusivamente en tus necesidades. Acércate con nosotros para recibir asesoría
-                    gratuita, y de esta forma puedas decidir qué tipo de herramienta de Software necesitas, ya sea un
-                    control de inventarios, un gestor de recurso humano, un punto de venta, etc. </p>
+                  <h3 class="card-titulo">web</h3>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
                 </div>
 
               </div>
@@ -132,24 +138,18 @@ require_once 'includes/header-index.php';
             <div class="col">
               <div class="card border-0">
                 <div class=" text-center p-3">
-                  <img src="./assets/IMG/card-programa-2.jpg" class="card-img-top" alt="">
+                  <img src="./IMG/icons/Data-icon.svg" alt="">
                 </div>
                 <div class="card-body text-center">
-                  <h3 class="card-titulo">Capacitación Empresarial</h3>
-                  <p class="card-text">¿Quieres capacitar a tus socios en el uso de alguna herramienta informática?
-                    Nosotros te ayudamos a hacerlo, nos adaptamos a tus necesidades y a la cantidad de socios. Acércate
-                    con nosotros para recibir asesoría gratuita, y de esta forma puedas consultaros todas tus dudas.</p>
+                  <h3 class="card-titulo">Data Base</h3>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam aliquid facere quis possimus maiores accusamus.</p>
                 </div>
 
               </div>
             </div>
           </div>
           <div class="col m-3 text-end">
-<<<<<<< HEAD
             <a href="" class="btn btn-primary">Conoce mas</a>
-=======
-            <a href="<?= base_url?>layout/services.php" class="btn btn-primary">Conoce mas</a>
->>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
           </div>
         </div>
       </section>
@@ -255,11 +255,7 @@ require_once 'includes/header-index.php';
               <p class="">Vive como si fueses a morir mañana. <br> Aprende como si fueses a vivir para
                 siempre.</p>
               <!-- btn -->
-<<<<<<< HEAD
               <a href="" class="btn btn-primary "> Aprende ahora</a>
-=======
-              <a href="<?= base_url?>layout/Academy.php" class="btn btn-primary "> Aprende ahora</a>
->>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
             </div>
           </div>
           <!-- Img -->
@@ -352,7 +348,6 @@ require_once 'includes/header-index.php';
           </div>
         </div>
       </section>
-
       <!-- testimonials -->
       <section class=" mt-5 mb-5 text-center ">
         <!-- title -->
@@ -374,13 +369,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-1.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-1.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-                              <h3>Julia</h3>
-                              <h6>Desarrollo de Software</h6>
+                              <?php include("./PHP/view1.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Tremendo curso, muy completo. Una excelente inversión.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -392,14 +388,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-2.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-2.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-
-                              <h3>Jorge Campos</h3>
-                              <h6>Desarrollo de Software</h6>
+                            <?php include("./PHP/view2.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Muy buenos los cursos, ideales para principiantes y para reforzar el conocimiento.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -411,15 +407,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-3.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-3.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-
-                              <h3>Daniel</h3>
-                              <h6>Base de datos</h6>
+                              <?php include("./PHP/view3.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Los temarios estan muy completos, los cursos son además muy accesibles, y fáciles de
-                                para entender.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -437,15 +432,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-4.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-4.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-
-                              <h3>Iván</h3>
-                              <h6>Base de Datos</h6>
+                              <?php include("./PHP/view4.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Me parece muy bien la enseñanza, yo empecé desde cero ahora siento que he adquirido
-                                mucho conocimiento y me motiva a continuar.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -457,15 +451,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-5.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-5.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-
-                              <h3>Lina</h3>
-                              <h6>Desarrollo Web</h6>
+                              <?php include("./PHP/view5.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Muy buen el curso de desarrollo web contiene excelentes ejemplos y suficiente
-                                explicación para los mismos. Estoy muy satisfecho.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -477,14 +470,14 @@ require_once 'includes/header-index.php';
                           <!-- content-img -->
                           <div class="img-area">
                             <!-- img -->
-                            <img src="<?= base_url?>assets/IMG/testimonio-6.jpg" alt="">
+                            <img src="./IMG/testimonials/testimonio-6.jpg" alt="">
                             <!-- img-text -->
                             <div class="img-text-sl">
-                              <h3>Grizel</h3>
-                              <h6>Desarrollo Web</h6>
+                              <?php include("./PHP/view6.php"); ?>
+                              <h3><?php echo $nom ?></h3>
+                              <h6><?php echo $curse ?></h6>
                               <p>
-                                Excelentes los cursos de desarrollo web y de software, me gusta el hecho de que se
-                                enseñe con proyectos del día a día.
+                                <?php echo $mensajee ?>
                               </p>
                             </div>
                           </div>
@@ -499,80 +492,103 @@ require_once 'includes/header-index.php';
         </div>
         <!-- btn -->
         <div class="d-grid-2 text-end m-3 text-md-center text-sm-center ">
-          <a href="<?= base_url?>layout/coments.php" class="btn btn-primary">Compartir Experiencia</a>
+          <a href="" class="btn btn-primary">Compartir Experiencia</a>
         </div>
       </section>
-<<<<<<< HEAD
-      
-=======
-      <section>
-        <!--formulario  -->
-        <section class="mt-5">
-          <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
-                    <!-- form -->
-                    <form method="post" class="row g-3 mt-3 justify-content-center" id=""
-            action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-            <!--name  -->
-            <div class="col-6">
-              <label for="" class="form-label">Nombre</label>
-              <input type="text" class="form-control" name="nombre_f" id="" placeholder="@Jose Alberto" minlength="4"
-                maxlength="20" pattern="[a-zA-Z ]{4,20}" required>
-            </div>
-            <!--first-name -->
-            <div class="col-6">
-              <label for="" class="form-label">Primer apellido</label>
-              <input type="text" class="form-control" name="ape_a_f" id="" placeholder="@Torres" minlength="4"
-                maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
-            </div>
-            <!--second-name  -->
-            <div class="col-6">
-              <label for="" class="form-label">Segundo apellido</label>
-              <input type="text" class="form-control" name="ape_b_f" id="" placeholder="@Hernandez" minlength="4"
-                maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
-            </div>
-            <!-- email -->
+      <!--formulario  -->
+      <section class="mt-5">
+        <h3 class="text-center">¿Cuentanos que podemos hacer juntos?</h3>
+        <!-- form -->
+        <form method="post" class="row g-3 mt-3 justify-content-center" id="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+          <!--name  -->
+          <div class="col-6">
+            <label for="" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="Nombre" id="" placeholder="@Jose Alberto"
+              minlength="4" maxlength="20" pattern="[a-zA-Z ]{4,20}" required>
+          </div>
+          <!--first-name -->
+          <div class="col-6">
+            <label for="" class="form-label">Primer apellido</label>
+            <input type="text" class="form-control" name="Apellido_a" id="" placeholder="@Torres"
+              minlength="4" maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+          </div>
+          <!--second-name  -->
+          <div class="col-6">
+            <label for="" class="form-label">Segundo apellido</label>
+            <input type="text" class="form-control" name="Apellido_b" id="" placeholder="@Hernandez"
+              minlength="4" maxlength="15" pattern="[a-zA-Z ]{4,15}" required>
+          </div>
+          <!--contact-->
+          <div class="col-6">
+            <label for="" class="form-label">Telefono</label>
+            <input type="tel" name="Telefono" class="form-control" id="" placeholder="@7223552380"
+              minlength="10" maxlength="10" required pattern="[0-9]+">
+          </div>
+          <!-- Name enterprice -->
             <div class="col-6 col-md-6">
-              <label for="" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email_f" id="" placeholder="rafa@gmail.com" minlength="12"
-                maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required value="<?php 
+            <label for="" class="form-label">Nombre de tu empresa</label>
+            <input type="text" class="form-control" name="Empresa" id="" placeholder="Industrias STARK"
+              minlength="3" maxlength="20" pattern="[a-zA-Z ]{3,20}" required>
+          </div>
+          <!-- email -->
+          <div class="col-6 col-md-6">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" name="Email" id="" placeholder="rafa@gmail.com"
+              minlength="12" maxlength="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required value="<?php 
                   if(isset($email)) echo $email
               ?>">
-            </div>
-            <!-- services opcion -->
-            <div class="col-12 mt-4 form-floating">
-              <select class="form-select" id="floatingSelect" aria-label="Servicios" name="IdS_f" required>
-                <option value="Elige una opcion">Elige una opcion</option>
-                <option value="1">Desarrollo Web</option>
-                <option value="2">Desarrollo de Software</option>
-                <option value="3">Capacitación empresarial</option>
-                <option value="4">Gestión de Base de Datos</option>
-                <option value="5">SEO</option>
-                <option value="6">Cursos</option>
-              </select>
-              <label for="floatingSelect">Indica el servicio de interes</label>
-            </div>
+          </div>
+          <!-- services opcion -->
+          <div class="col-12 mt-4 form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Servicios" name="Lista"
+              required>
+              <option value="Elige una opcion">Elige una opcion</option>
+              <option value="Desarrollo Web">Desarrollo Web</option>
+              <option value="Desarrollo de Software">Desarrollo de Software</option>
+              <option value="Capacitación empresarial">Capacitación empresarial</option>
+              <option value="Gestión de Base de Datos">Gestión de Base de Datos</option>
+              <option value="SEO">SEO</option>
+              <option value="Cursos">Cursos</option>
+            </select>
+            <label for="floatingSelect">Indica el servicio de interes</label>
+          </div>
             <!-- message -->
             <div class="form-floating col-12 ">
-              <textarea class="form-control" name="mensa_f" placeholder="Mensaje: " id="floatingTextarea"
-                minlength="20" maxlength="150" pattern="[a-zA-Z ]{20,800}"></textarea>
-              <label for="floatingTextarea">Tu esmpresa es:</label>
-            </div>
-            <!-- btn-form -->
-            <div class="mb-3 text-center ">
-              <input type="submit" name="subir" class="btn btn-primary rounded-2 col-4">
-              <!-- <a href="" type="submit" class="btn btn-primary rounded-2 col-4">Enviar</a> -->
-            </div>
-          </form>
-        </section>
+            <textarea class="form-control" name="Area" placeholder="Mi @empresa es...."
+              id="floatingTextarea" minlength="20" maxlength="150" pattern="[a-zA-Z ]{20,800}"></textarea>
+            <label for="floatingTextarea">Tu esmpresa es:</label>
+          </div>
+          <!-- btn-form -->
+          <div class="mb-3 text-center ">
+            <input type="submit" name="subir" class="btn btn-primary rounded-2 col-4">
+            <!-- <a href="" type="submit" class="btn btn-primary rounded-2 col-4">Enviar</a> -->
+          </div>
+        </form>
       </section>
->>>>>>> f241c944b3c1710b1adf54fd501c2a06216e4019
     </div>
   </body>
 </main>
+<!-- Footer -->
+<footer class="fondo container-fluid mt-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <nav class="nav-footer">
+      <a href="">home</a>
+      <a href="">cursos</a>
+      <a href=""><img src="./IMG/DAYCODE-nav.png" alt=""></a>
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </nav>
+  </div>
+</footer>
+<!-- Bp-js -->
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/Open-modal.js"></script>
 
 <?php 
-
-require_once 'includes/footer.php';
-
-
+    include("./PHP/registro.php");
+    if(isset($_POST['subir'])){
+      $email = $_POST['Email'];
+    }
 ?>
+</html>

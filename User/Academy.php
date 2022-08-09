@@ -1,23 +1,89 @@
 <?php
+error_reporting(E_ALL);
 
-$pagina_admin = 2;     
-$pagina_modificacion= 0;
+
+require '../config/parameters.php';
+
+
+$pagina_admin = 2;
+$pagina_modificacion = 0;
 $nombre_pagina = "Home";
-$pagina =0;
-$modal=0;
+$pagina = 0;
+$modal = 0;
 
-if (session_start ()) {
-   # code...
+if (session_start()) {
+    # code...
+    // unset($_SESSION['carrito']);
+} else {
+    session_start();
+    # code...
 }
-else {session_start ();
-   # code...
-}
+
 
 $nombre_pagina = "inicio";
 require_once '../includes/header.php';
 
 include_once '../config/ConexionDB.php';
-$productos = "SELECT * FROM cursos ";
+
+$productos = "SELECT * FROM cursos WHERE activo=1";
+$sentenciaProductos = $PDO->prepare($productos);
+$sentenciaProductos->execute();
+
+$resultado = $sentenciaProductos->fetchAll();
+
+//instrucciones de carrito//
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$token = isset($_GET['token']) ? $_GET['token'] : '';
+
+if ($id == ' ' || $token == ' ') {
+    echo 'Error al procesar la pericion';
+    exit;
+} else {
+
+    $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
+
+    if ($token == $token_tmp) {
+        /*direccion a base de datos */
+        $sql = $conexion->prepare("SELECT count(ID) From cursos WHERE id=? AND activo=1");
+        $sql->execute([$id]);
+
+        if ($sql->fetchColumn() > 0) {
+
+            $sql = $conexion->prepare("SELECT Nombre,categoria,Descripcion, Costo from cursos where id=? AND
+            activo=1 LIMIT 1");
+            $sql->execute([$id]);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $nombre = $row['Nombre'];
+            $cate = $row['categoria'];
+            $des = $row['Descripcion'];
+            $cost = $row['Costo'];
+            $dir_images = 'images/courses/' . $id . '/';
+            /* imagenes */
+
+            $rutaImg = $dir_images . 'Principal.png';
+
+            if (!file_exists($rutaImg)) {
+                $dir = dir($dir_images);
+                /** tipos de archivo img */
+
+                while (($archivo = $dir->read()) != false) {
+                    if ($archivo != 'principal.jpg' && (strpos($archivo, 'png') || strpos($archivo, 'jpeg'))) {
+                        $imagenes[] = $dir_images . $archivo;
+                    }
+                }
+                $dir->close();
+            } else {
+                echo 'error al procesar la peticion';
+                exit;
+            }
+        } else {
+            echo 'error al procesar la peticion';
+            exit;
+        }
+    }
+}
+
+
 ?>
 
 <body>
@@ -47,7 +113,7 @@ $productos = "SELECT * FROM cursos ";
             </div>
         </div>
         <!-- ´section courses -->
-        <section class="Academy-course mt-5">
+        <section class="">
             <div class=" mt-5">
                 <h3 class="text-center mb-4">El viaje al futuro comienza aqui </h3>
 
@@ -71,8 +137,8 @@ $productos = "SELECT * FROM cursos ";
                             </div>
                             <div class="card-footer">
                                 <!-- ´btn -->
-                                <a href="#" class="card-link btn btn-primary rounded-pill3">Comprar</a>
-                                <a href="#" class="card-link btn btn-primary rounded-pill-3">Agregar carrito</a>
+                               
+                                <button  class="card-link btn btn-outline-primary rounded-pill-3" type="button" onclick="addProducto(<?php echo $row['ID']; ?>, '<?php echo hash_hmac('sha1', $row['ID'],KEY_TOKEN); ?>')">Agregar carrito</button>
                             </div>
                         </div>
                     </div>
@@ -82,7 +148,8 @@ $productos = "SELECT * FROM cursos ";
 
     </div>
 </body>
-<?php 
+
+<?php
 
 require_once '../includes/footer.php';
 

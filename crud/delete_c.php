@@ -10,7 +10,7 @@
     if($resultado_d){
         echo "<script language='JavaScript'>
             alert('Los datos FUERON ELIMINADOS');
-            location.assign('../User/panel.php');
+            location.assign('../crud/panel_control.php');
         </script>";
     }else{
         echo "<script language='JavaScript'>

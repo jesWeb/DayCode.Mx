@@ -31,9 +31,9 @@
     </div>
 </footer>
 <!-- Bp-js -->
-<script src="<?= base_url?>assets/js/bootstrap.bundle.min.js"></script>
-<script src="<?= base_url?>assets/js/Open-modal.js"></script>
-<script src="<?= base_url?>assets/js/login.js"></script>
-<script src="<?= base_url?>assets/js/crear-cuenta.js"></script>
-
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/Open-modal.js"></script>
+<script src="../assets/js/login.js"></script>
+<script src="../assets/js/crear-cuenta.js"></script>
+<script src="../assets/js/carrito.js"></script>
 </html>
